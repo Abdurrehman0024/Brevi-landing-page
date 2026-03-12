@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Structr — AI Chief for Dev Teams</title>
+  <title>Brevi — AI Chief for Dev Teams</title>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -32,7 +32,6 @@
       overflow-x: hidden;
     }
 
-    /* ── NOISE TEXTURE OVERLAY ── */
     body::before {
       content: '';
       position: fixed;
@@ -43,7 +42,6 @@
       opacity: 0.4;
     }
 
-    /* ── NAV ── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -75,11 +73,7 @@
       gap: 3px;
     }
 
-    .logo-mark span {
-      border-radius: 3px;
-      display: block;
-    }
-
+    .logo-mark span { border-radius: 3px; display: block; }
     .logo-mark span:nth-child(1) { background: var(--blue); }
     .logo-mark span:nth-child(2) { background: var(--green); }
     .logo-mark span:nth-child(3) { background: var(--yellow); }
@@ -101,7 +95,6 @@
 
     .nav-cta:hover { background: #25a066; transform: translateY(-1px); }
 
-    /* ── HERO ── */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -115,11 +108,9 @@
 
     .hero-glow {
       position: absolute;
-      top: 20%;
-      left: 50%;
+      top: 20%; left: 50%;
       transform: translateX(-50%);
-      width: 600px;
-      height: 600px;
+      width: 600px; height: 600px;
       background: radial-gradient(ellipse, rgba(74,21,75,0.6) 0%, transparent 70%);
       pointer-events: none;
     }
@@ -232,7 +223,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ── HOW IT WORKS ── */
     .section {
       padding: 100px 24px;
       max-width: 1100px;
@@ -275,10 +265,7 @@
       transition: border-color 0.2s, transform 0.2s;
     }
 
-    .step:hover {
-      transform: translateY(-4px);
-      border-color: rgba(74,21,75,0.9);
-    }
+    .step:hover { transform: translateY(-4px); border-color: rgba(74,21,75,0.9); }
 
     .step::before {
       content: '';
@@ -302,11 +289,7 @@
       line-height: 1;
     }
 
-    .step-icon {
-      font-size: 1.8rem;
-      margin-bottom: 16px;
-      display: block;
-    }
+    .step-icon { font-size: 1.8rem; margin-bottom: 16px; display: block; }
 
     .step h3 {
       font-family: 'Syne', sans-serif;
@@ -316,13 +299,30 @@
       letter-spacing: -0.02em;
     }
 
-    .step p {
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.6;
+    .step p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+
+    /* Demo video button inside step */
+    .demo-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      padding: 8px 16px;
+      background: rgba(54,197,240,0.1);
+      border: 1px solid rgba(54,197,240,0.3);
+      border-radius: 8px;
+      color: var(--blue);
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s;
     }
 
-    /* ── FEATURES ── */
+    .demo-btn:hover {
+      background: rgba(54,197,240,0.2);
+      transform: translateY(-1px);
+    }
+
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -337,10 +337,7 @@
       transition: all 0.2s;
     }
 
-    .feature:hover {
-      border-color: rgba(74,21,75,0.9);
-      transform: translateY(-3px);
-    }
+    .feature:hover { border-color: rgba(74,21,75,0.9); transform: translateY(-3px); }
 
     .feature-icon {
       width: 44px; height: 44px;
@@ -352,20 +349,9 @@
       margin-bottom: 16px;
     }
 
-    .feature h3 {
-      font-family: 'Syne', sans-serif;
-      font-weight: 600;
-      font-size: 1rem;
-      margin-bottom: 8px;
-    }
+    .feature h3 { font-family: 'Syne', sans-serif; font-weight: 600; font-size: 1rem; margin-bottom: 8px; }
+    .feature p { font-size: 0.875rem; color: var(--muted); line-height: 1.6; }
 
-    .feature p {
-      font-size: 0.875rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    /* ── PRICING ── */
     .pricing-section {
       padding: 100px 24px;
       position: relative;
@@ -373,9 +359,7 @@
     }
 
     .pricing-section .section-title,
-    .pricing-section .section-label {
-      text-align: center;
-    }
+    .pricing-section .section-label { text-align: center; }
 
     .pricing-grid {
       display: grid;
@@ -403,8 +387,7 @@
 
     .plan-badge {
       position: absolute;
-      top: -14px;
-      left: 50%;
+      top: -14px; left: 50%;
       transform: translateX(-50%);
       background: var(--green);
       color: #000;
@@ -417,24 +400,9 @@
       white-space: nowrap;
     }
 
-    .plan-name {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: 1.2rem;
-      margin-bottom: 8px;
-      letter-spacing: -0.02em;
-    }
-
-    .plan-desc {
-      font-size: 0.875rem;
-      color: var(--muted);
-      margin-bottom: 28px;
-      line-height: 1.5;
-    }
-
-    .plan-price {
-      margin-bottom: 32px;
-    }
+    .plan-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.2rem; margin-bottom: 8px; letter-spacing: -0.02em; }
+    .plan-desc { font-size: 0.875rem; color: var(--muted); margin-bottom: 28px; line-height: 1.5; }
+    .plan-price { margin-bottom: 32px; }
 
     .price-amount {
       font-family: 'Syne', sans-serif;
@@ -444,11 +412,7 @@
       line-height: 1;
     }
 
-    .price-period {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-top: 4px;
-    }
+    .price-period { font-size: 0.9rem; color: var(--muted); margin-top: 4px; }
 
     .plan-features {
       list-style: none;
@@ -479,7 +443,6 @@
 
     .plan:not(.featured) .check { background: rgba(255,255,255,0.1); color: var(--muted); }
     .plan.featured .check { background: rgba(46,182,125,0.2); color: var(--green); }
-
     .plan-features li.dimmed { color: var(--muted); }
 
     .plan-btn {
@@ -503,15 +466,9 @@
       color: var(--text);
     }
 
-    .plan-btn.outline:hover {
-      border-color: rgba(255,255,255,0.3);
-      background: rgba(255,255,255,0.05);
-    }
+    .plan-btn.outline:hover { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.05); }
 
-    .plan-btn.solid {
-      background: var(--green);
-      color: #000;
-    }
+    .plan-btn.solid { background: var(--green); color: #000; }
 
     .plan-btn.solid:hover {
       background: #25a066;
@@ -519,14 +476,8 @@
       transform: translateY(-1px);
     }
 
-    .pricing-note {
-      text-align: center;
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-top: 24px;
-    }
+    .pricing-note { text-align: center; font-size: 0.8rem; color: var(--muted); margin-top: 24px; }
 
-    /* ── DIVIDER ── */
     .color-bar {
       height: 3px;
       background: linear-gradient(90deg, var(--blue) 0%, var(--green) 33%, var(--yellow) 66%, var(--red) 100%);
@@ -536,7 +487,6 @@
       opacity: 0.5;
     }
 
-    /* ── FOOTER ── */
     footer {
       padding: 48px 24px;
       text-align: center;
@@ -557,16 +507,9 @@
       gap: 8px;
     }
 
-    .footer-logo .logo-mark {
-      width: 24px; height: 24px;
-    }
+    .footer-logo .logo-mark { width: 24px; height: 24px; }
+    footer p { font-size: 0.8rem; color: var(--muted); }
 
-    footer p {
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    /* ── SLACK BADGE ── */
     .slack-badge {
       display: inline-flex;
       align-items: center;
@@ -581,17 +524,13 @@
 
     .slack-badge svg { opacity: 0.6; }
 
-    /* ── SCROLL REVEAL ── */
     .reveal {
       opacity: 0;
       transform: translateY(24px);
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
   </style>
 </head>
 <body>
@@ -603,9 +542,9 @@
         <span></span><span></span>
         <span></span><span></span>
       </div>
-      Structr
+      Brevi
     </div>
-    <a href="#pricing" class="nav-cta">Get Started Free</a>
+    <a href="https://brevi.onrender.com/slack/install" class="nav-cta">Get Started Free</a>
   </nav>
 
   <!-- HERO -->
@@ -623,14 +562,14 @@
     </h1>
 
     <p class="hero-sub">
-      Assign tasks from Slack. Structr reads your Jira ticket, gives the manager a plain summary, sends the developer a structured brief, scans your GitHub repo, and keeps everything threaded in real time.
+      Assign tasks from Slack. Brevi reads your Jira ticket, gives the manager a plain summary, sends the developer a structured brief, scans your GitHub repo, and keeps everything threaded in real time.
     </p>
 
     <div class="hero-actions">
-      <a href="#pricing" class="btn-primary">
+      <a href="https://brevi.onrender.com/slack/install" class="btn-primary">
         Add to Slack — Free
       </a>
-      <a href="#how-it-works" class="btn-secondary">See how it works</a>
+      <a href="#how-it-works" class="btn-secondary">See how it works ↓</a>
     </div>
 
     <div class="slack-badge">
@@ -656,7 +595,7 @@
         <span class="step-number">02</span>
         <span class="step-icon">🤖</span>
         <h3>AI reads the ticket</h3>
-        <p>Structr fetches your Jira ticket and generates two things — a plain summary for the manager and a structured brief for the developer, plus a GitHub repo scan for relevant files.</p>
+        <p>Brevi fetches your Jira ticket and generates two things — a plain summary for the manager and a structured brief for the developer, plus a GitHub repo scan for relevant files.</p>
       </div>
       <div class="step reveal">
         <span class="step-number">03</span>
@@ -669,6 +608,9 @@
         <span class="step-icon">✅</span>
         <h3>Done via /done</h3>
         <p>When finished, the dev types /done, submits PR links. Manager is notified instantly. Everything logged in the channel thread.</p>
+        <a href="#" class="demo-btn" id="demo-btn">
+          ▶ Watch demo
+        </a>
       </div>
     </div>
   </section>
@@ -682,7 +624,7 @@
       <div class="feature reveal">
         <div class="feature-icon" style="background:rgba(54,197,240,0.12);color:var(--blue)">🎯</div>
         <h3>AI-Generated Briefs & Summaries</h3>
-        <p>Structr reads your Jira ticket and sends the manager a plain-English task summary, while the developer gets a structured brief with approach, focus areas, and potential risks.</p>
+        <p>Brevi reads your Jira ticket and sends the manager a plain-English task summary, while the developer gets a structured brief with approach, focus areas, and potential risks.</p>
       </div>
       <div class="feature reveal">
         <div class="feature-icon" style="background:rgba(46,182,125,0.12);color:var(--green)">🔍</div>
@@ -697,10 +639,10 @@
       <div class="feature reveal">
         <div class="feature-icon" style="background:rgba(224,30,90,0.12);color:var(--red)">⚠️</div>
         <h3>PR Conflict Detection</h3>
-        <p>Before the dev starts, Structr checks open PRs for file conflicts and warns both manager and developer upfront.</p>
+        <p>Before the dev starts, Brevi checks open PRs for file conflicts and warns both manager and developer upfront.</p>
       </div>
       <div class="feature reveal">
-        <div class="feature-icon" style="background:rgba(74,21,75,0.3);color:#c084fc)">💬</div>
+        <div class="feature-icon" style="background:rgba(74,21,75,0.3);color:#c084fc">💬</div>
         <h3>Scope Clarification Flow</h3>
         <p>Dev flags scope unclear → manager gets a Send Clarification button → dev gets fresh Accept buttons. All in Slack.</p>
       </div>
@@ -725,42 +667,21 @@
       <!-- FREE -->
       <div class="plan reveal">
         <div class="plan-name">Free</div>
-        <div class="plan-desc">Perfect for small teams trying Structr out.</div>
+        <div class="plan-desc">Perfect for small teams trying Brevi out.</div>
         <div class="plan-price">
           <div class="price-amount">$0</div>
           <div class="price-period">forever</div>
         </div>
         <ul class="plan-features">
-          <li>
-            <span class="check">✓</span>
-            <span>5 task assignments per month</span>
-          </li>
-          <li>
-            <span class="check">✓</span>
-            <span>AI-generated developer briefs</span>
-          </li>
-          <li>
-            <span class="check">✓</span>
-            <span>1 manager, up to 3 developers</span>
-          </li>
-          <li>
-            <span class="check">✓</span>
-            <span>Channel threading</span>
-          </li>
-          <li class="dimmed">
-            <span class="check">–</span>
-            <span>GitHub repo intelligence</span>
-          </li>
-          <li class="dimmed">
-            <span class="check">–</span>
-            <span>PR conflict detection</span>
-          </li>
-          <li class="dimmed">
-            <span class="check">–</span>
-            <span>Unlimited managers & developers</span>
-          </li>
+          <li><span class="check">✓</span><span>5 task assignments per month</span></li>
+          <li><span class="check">✓</span><span>AI-generated developer briefs</span></li>
+          <li><span class="check">✓</span><span>1 manager, up to 3 developers</span></li>
+          <li><span class="check">✓</span><span>Channel threading</span></li>
+          <li class="dimmed"><span class="check">–</span><span>GitHub repo intelligence</span></li>
+          <li class="dimmed"><span class="check">–</span><span>PR conflict detection</span></li>
+          <li class="dimmed"><span class="check">–</span><span>Unlimited managers & developers</span></li>
         </ul>
-        <a href="#" class="plan-btn outline">Add to Slack — Free</a>
+        <a href="https://brevi.onrender.com/slack/install" class="plan-btn outline">Add to Slack — Free</a>
       </div>
 
       <!-- PRO -->
@@ -773,36 +694,15 @@
           <div class="price-period">per workspace / month</div>
         </div>
         <ul class="plan-features">
-          <li>
-            <span class="check">✓</span>
-            <span>Unlimited task assignments</span>
-          </li>
-          <li>
-            <span class="check">✓</span>
-            <span>AI-generated developer briefs</span>
-          </li>
-          <li>
-            <span class="check">✓</span>
-            <span>Unlimited managers & developers</span>
-          </li>
-          <li>
-            <span class="check">✓</span>
-            <span>Channel threading</span>
-          </li>
-          <li>
-            <span class="check">✓</span>
-            <span>GitHub repo intelligence</span>
-          </li>
-          <li>
-            <span class="check">✓</span>
-            <span>PR conflict detection</span>
-          </li>
-          <li>
-            <span class="check">✓</span>
-            <span>Priority support</span>
-          </li>
+          <li><span class="check">✓</span><span>Unlimited task assignments</span></li>
+          <li><span class="check">✓</span><span>AI-generated developer briefs</span></li>
+          <li><span class="check">✓</span><span>Unlimited managers & developers</span></li>
+          <li><span class="check">✓</span><span>Channel threading</span></li>
+          <li><span class="check">✓</span><span>GitHub repo intelligence</span></li>
+          <li><span class="check">✓</span><span>PR conflict detection</span></li>
+          <li><span class="check">✓</span><span>Priority support</span></li>
         </ul>
-        <a href="#" class="plan-btn solid">Get Pro — $25.99/mo</a>
+        <a href="mailto:hello@getbrevi.io?subject=Brevi Pro" class="plan-btn solid">Get Pro — $25.99/mo</a>
       </div>
 
     </div>
@@ -819,9 +719,9 @@
         <span></span><span></span>
         <span></span><span></span>
       </div>
-      Structr
+      Brevi
     </div>
-    <p>© 2026 Structr. Built for dev teams who ship fast.</p>
+    <p>© 2026 Brevi. Built for dev teams who ship fast.</p>
   </footer>
 
   <script>
@@ -836,6 +736,9 @@
       });
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
+
+    // Demo button — update this href once you have a Loom URL
+    // document.getElementById('demo-btn').href = 'YOUR_LOOM_URL_HERE';
   </script>
 
 </body>
