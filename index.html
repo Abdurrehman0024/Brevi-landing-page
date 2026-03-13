@@ -301,7 +301,6 @@
 
     .step p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
 
-    /* Demo video button inside step */
     .demo-btn {
       display: inline-flex;
       align-items: center;
@@ -648,8 +647,8 @@
       </div>
       <div class="feature reveal">
         <div class="feature-icon" style="background:rgba(54,197,240,0.12);color:var(--blue)">📊</div>
-        <h3>Admin Dashboard</h3>
-        <p>Monitor workspace health, task velocity, and team activity from a clean web dashboard. Built for founders and leads.</p>
+        <h3>Weekly Digest & Status Reports</h3>
+        <p>Every Friday, managers receive a full digest of team activity. Run /brevi-status anytime for a live snapshot.</p>
       </div>
     </div>
   </section>
@@ -673,13 +672,14 @@
           <div class="price-period">forever</div>
         </div>
         <ul class="plan-features">
-          <li><span class="check">✓</span><span>5 task assignments per month</span></li>
+          <li><span class="check">✓</span><span>10 task assignments per month</span></li>
           <li><span class="check">✓</span><span>AI-generated developer briefs</span></li>
-          <li><span class="check">✓</span><span>1 manager, up to 3 developers</span></li>
+          <li><span class="check">✓</span><span>1 authorized manager</span></li>
+          <li><span class="check">✓</span><span>GitHub repo intelligence</span></li>
           <li><span class="check">✓</span><span>Channel threading</span></li>
-          <li class="dimmed"><span class="check">–</span><span>GitHub repo intelligence</span></li>
-          <li class="dimmed"><span class="check">–</span><span>PR conflict detection</span></li>
-          <li class="dimmed"><span class="check">–</span><span>Unlimited managers & developers</span></li>
+          <li><span class="check">✓</span><span>Weekly digest & /brevi-status</span></li>
+          <li class="dimmed"><span class="check">–</span><span>Up to 4 authorized managers</span></li>
+          <li class="dimmed"><span class="check">–</span><span>Unlimited task assignments</span></li>
         </ul>
         <a href="https://brevi.onrender.com/slack/install" class="plan-btn outline">Add to Slack — Free</a>
       </div>
@@ -696,10 +696,11 @@
         <ul class="plan-features">
           <li><span class="check">✓</span><span>Unlimited task assignments</span></li>
           <li><span class="check">✓</span><span>AI-generated developer briefs</span></li>
-          <li><span class="check">✓</span><span>Unlimited managers & developers</span></li>
-          <li><span class="check">✓</span><span>Channel threading</span></li>
+          <li><span class="check">✓</span><span>Up to 4 authorized managers</span></li>
           <li><span class="check">✓</span><span>GitHub repo intelligence</span></li>
           <li><span class="check">✓</span><span>PR conflict detection</span></li>
+          <li><span class="check">✓</span><span>Channel threading</span></li>
+          <li><span class="check">✓</span><span>Weekly digest & /brevi-status</span></li>
           <li><span class="check">✓</span><span>Priority support</span></li>
         </ul>
         <a href="mailto:hello@getbrevi.io?subject=Brevi Pro" class="plan-btn solid">Get Pro — $25.99/mo</a>
@@ -708,7 +709,7 @@
     </div>
 
     <p class="pricing-note reveal" style="margin-top:32px;">
-      Cancel anytime. No contracts. Payments secured by Stripe.
+      Cancel anytime. No contracts. Contact us at hello@getbrevi.io to upgrade.
     </p>
   </section>
 
@@ -725,7 +726,6 @@
   </footer>
 
   <script>
-    // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
@@ -736,9 +736,6 @@
       });
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
-
-    // Demo button — update this href once you have a Loom URL
-    // document.getElementById('demo-btn').href = 'YOUR_LOOM_URL_HERE';
   </script>
 
 </body>
