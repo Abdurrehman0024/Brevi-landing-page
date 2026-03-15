@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Brevi — AI Chief for Dev Teams</title>
+  <title>Brevi</title>
+  <link rel="icon" type="image/png" href="brevi.png" />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -59,7 +60,7 @@
       font-family: 'Syne', sans-serif;
       font-weight: 800;
       font-size: 1.5rem;
-      letter-spacing: -0.03em;
+      letter-spacing: -0.01em;
       color: var(--text);
       display: flex;
       align-items: center;
@@ -144,9 +145,9 @@
     h1 {
       font-family: 'Syne', sans-serif;
       font-weight: 800;
-      font-size: clamp(3rem, 7vw, 6rem);
+      font-size: clamp(2.2rem, 5vw, 4.5rem);
       line-height: 1.0;
-      letter-spacing: -0.04em;
+      letter-spacing: -0.02em;
       margin-bottom: 28px;
       animation: fadeUp 0.6s 0.1s ease both;
     }
@@ -243,8 +244,8 @@
     .section-title {
       font-family: 'Syne', sans-serif;
       font-weight: 700;
-      font-size: clamp(2rem, 4vw, 3rem);
-      letter-spacing: -0.03em;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      letter-spacing: -0.01em;
       margin-bottom: 60px;
       line-height: 1.1;
     }
@@ -351,6 +352,215 @@
     .feature h3 { font-family: 'Syne', sans-serif; font-weight: 600; font-size: 1rem; margin-bottom: 8px; }
     .feature p { font-size: 0.875rem; color: var(--muted); line-height: 1.6; }
 
+    /* ─── SLACK MOCKUP ─────────────────────────────────────────────────────── */
+
+    .mockup-section {
+      padding: 100px 24px;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .mockup-section .section-label,
+    .mockup-section .section-title { max-width: 1100px; margin-left: auto; margin-right: auto; }
+    .mockup-section .section-title { margin-bottom: 16px; }
+    .mockup-section .section-subtitle {
+      max-width: 1100px;
+      margin: 0 auto 60px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .mockup-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .mockup-wrapper { grid-template-columns: 1fr; }
+    }
+
+    .mockup-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .slack-window {
+      background: #1a1d21;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+    }
+
+    .slack-topbar {
+      background: #19171d;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .slack-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .slack-dot.r { background: #ff5f57; }
+    .slack-dot.y { background: #febc2e; }
+    .slack-dot.g { background: #28c840; }
+
+    .slack-channel {
+      margin-left: 8px;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      font-family: monospace;
+    }
+
+    .slack-body { padding: 16px; }
+
+    .slack-msg {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .slack-avatar {
+      width: 32px; height: 32px;
+      border-radius: 6px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .slack-msg-content { flex: 1; }
+
+    .slack-msg-header {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .slack-name { font-size: 0.8rem; font-weight: 700; color: #fff; }
+    .slack-time { font-size: 0.65rem; color: rgba(255,255,255,0.3); }
+
+    .slack-msg-text {
+      font-size: 0.78rem;
+      color: #d1d2d3;
+      line-height: 1.5;
+    }
+
+    .slack-msg-text strong { color: #fff; font-weight: 600; }
+    .slack-msg-text .mention { color: #36C5F0; }
+    .slack-msg-text .code { background: rgba(255,255,255,0.1); padding: 1px 5px; border-radius: 3px; font-family: monospace; font-size: 0.72rem; }
+
+    .slack-card {
+      background: #222529;
+      border-left: 3px solid var(--green);
+      border-radius: 0 6px 6px 0;
+      padding: 12px 14px;
+      margin-top: 8px;
+    }
+
+    .slack-card-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .slack-card-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+
+    .slack-card-field { font-size: 0.7rem; color: rgba(255,255,255,0.5); }
+    .slack-card-value { font-size: 0.72rem; color: #d1d2d3; }
+
+    .slack-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.06);
+      margin: 12px 0;
+    }
+
+    .slack-section-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 6px;
+    }
+
+    .slack-section-text {
+      font-size: 0.72rem;
+      color: #b9bbbe;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    .slack-steps {
+      font-size: 0.7rem;
+      color: #b9bbbe;
+      line-height: 1.8;
+    }
+
+    .slack-steps span { color: var(--green); font-weight: 600; }
+
+    .slack-files {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 6px;
+    }
+
+    .slack-file-tag {
+      background: rgba(54,197,240,0.12);
+      color: var(--blue);
+      font-size: 0.65rem;
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-family: monospace;
+    }
+
+    .slack-actions {
+      display: flex;
+      gap: 6px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+
+    .slack-btn {
+      padding: 5px 12px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      cursor: default;
+    }
+
+    .slack-btn.primary { background: #007a5a; color: #fff; }
+    .slack-btn.default { background: #2c2d30; color: #d1d2d3; border: 1px solid rgba(255,255,255,0.1); }
+    .slack-btn.danger { background: rgba(224,30,90,0.15); color: var(--red); border: 1px solid rgba(224,30,90,0.3); }
+
+    .mockup-caption {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    /* ─── PRICING ──────────────────────────────────────────────────────────── */
+
     .pricing-section {
       padding: 100px 24px;
       position: relative;
@@ -399,16 +609,281 @@
       white-space: nowrap;
     }
 
-    .plan-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.2rem; margin-bottom: 8px; letter-spacing: -0.02em; }
+    .plan-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.2rem; margin-bottom: 8px; letter-spacing: -0.01em; }
     .plan-desc { font-size: 0.875rem; color: var(--muted); margin-bottom: 28px; line-height: 1.5; }
     .plan-price { margin-bottom: 32px; }
 
     .price-amount {
       font-family: 'Syne', sans-serif;
       font-weight: 800;
-      font-size: 3.5rem;
-      letter-spacing: -0.04em;
+      font-size: 2.4rem;
+      letter-spacing: -0.02em;
       line-height: 1;
+    }
+
+    /* ─── MID-PAGE CTA ─────────────────────────────────────────────────────── */
+    .cta-section {
+      padding: 80px 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, rgba(74,21,75,0.5) 0%, rgba(54,197,240,0.08) 100%);
+      border: 1px solid rgba(74,21,75,0.6);
+      border-radius: 24px;
+      padding: 64px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-inner::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 200px; height: 200px;
+      background: radial-gradient(ellipse, rgba(54,197,240,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-inner::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -60px;
+      width: 200px; height: 200px;
+      background: radial-gradient(ellipse, rgba(46,182,125,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 16px;
+    }
+
+    .cta-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .cta-sub {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 36px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .cta-note { font-size: 0.75rem; color: var(--muted); }
+
+    /* ─── TRUST SIGNALS ────────────────────────────────────────────────────── */
+    .trust-bar {
+      padding: 40px 24px;
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,0.01);
+    }
+
+    .trust-bar-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .trust-icon {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .trust-item strong { color: var(--text); font-weight: 500; display: block; font-size: 0.82rem; }
+
+    /* ─── SOCIAL PROOF ─────────────────────────────────────────────────────── */
+    .social-proof-section {
+      padding: 80px 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .social-proof-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .social-proof-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .social-proof-stat {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.85rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    .social-proof-stat span {
+      color: var(--green);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .testimonial {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .testimonial:hover { border-color: rgba(74,21,75,0.9); transform: translateY(-3px); }
+
+    .testimonial-stars {
+      color: var(--yellow);
+      font-size: 0.8rem;
+      margin-bottom: 14px;
+      letter-spacing: 2px;
+    }
+
+    .testimonial-text {
+      font-size: 0.875rem;
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .testimonial-avatar {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .testimonial-name { font-size: 0.82rem; font-weight: 600; color: var(--text); }
+    .testimonial-role { font-size: 0.75rem; color: var(--muted); }
+
+    /* ─── FAQ ──────────────────────────────────────────────────────────────── */
+    .faq-section {
+      padding: 100px 24px;
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-align: left;
+      padding: 20px 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      transition: color 0.2s;
+    }
+
+    .faq-question:hover { color: var(--blue); }
+
+    .faq-icon {
+      flex-shrink: 0;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      transition: all 0.2s;
+      color: var(--muted);
+    }
+
+    .faq-item.open .faq-icon {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #000;
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.7;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+      padding-bottom: 20px;
     }
 
     .price-period { font-size: 0.9rem; color: var(--muted); margin-top: 4px; }
@@ -466,14 +941,8 @@
     }
 
     .plan-btn.outline:hover { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.05); }
-
     .plan-btn.solid { background: var(--green); color: #000; }
-
-    .plan-btn.solid:hover {
-      background: #25a066;
-      box-shadow: 0 8px 30px rgba(46,182,125,0.3);
-      transform: translateY(-1px);
-    }
+    .plan-btn.solid:hover { background: #25a066; box-shadow: 0 8px 30px rgba(46,182,125,0.3); transform: translateY(-1px); }
 
     .pricing-note { text-align: center; font-size: 0.8rem; color: var(--muted); margin-top: 24px; }
 
@@ -549,46 +1018,72 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-glow"></div>
-
     <div class="hero-badge">
       <span class="badge-dot"></span>
       Lives inside Slack — no new tools
     </div>
-
     <h1>
-      Your AI Chief<br/>
-      <span class="h1-line2">for Dev Teams</span>
+      Stop explaining tickets.<br/>
+      <span class="h1-line2">Start shipping.</span>
     </h1>
-
     <p class="hero-sub">
-      Assign tasks from Slack. Brevi reads your Jira ticket, gives the manager a plain summary, sends the developer a structured brief, scans your GitHub repo, and keeps everything threaded in real time.
+      Brevi turns Jira tickets into structured AI briefs — delivered to your developers in Slack. No back-and-forth, no vague handoffs, no context lost.
     </p>
-
     <div class="hero-actions">
-      <a href="https://brevi.onrender.com/slack/install" class="btn-primary">
-        Add to Slack — Free
-      </a>
+      <a href="https://brevi.onrender.com/slack/install" class="btn-primary">Add to Slack — Free</a>
       <a href="#how-it-works" class="btn-secondary">See how it works ↓</a>
     </div>
-
     <div class="slack-badge">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
       Built exclusively for Slack workspaces
     </div>
   </section>
 
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-item">
+        <div class="trust-icon">🔒</div>
+        <div>
+          <strong>Credentials encrypted at rest</strong>
+          Jira & GitHub tokens stored securely
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🔑</div>
+        <div>
+          <strong>OAuth 2.0 install</strong>
+          Standard Slack app authorization
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🚫</div>
+        <div>
+          <strong>No data sold. Ever.</strong>
+          Your tickets stay yours
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">⚡</div>
+        <div>
+          <strong>No new tools</strong>
+          Lives entirely inside Slack
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- HOW IT WORKS -->
   <section class="section" id="how-it-works">
     <div class="color-bar" style="margin-bottom: 80px;"></div>
     <p class="section-label reveal">How it works</p>
     <h2 class="section-title reveal">From <em style="font-style:normal;color:var(--blue)">task</em> to <em style="font-style:normal;color:var(--green)">brief</em> in seconds</h2>
-
     <div class="steps">
       <div class="step reveal">
         <span class="step-number">01</span>
         <span class="step-icon">⚡</span>
         <h3>Manager types /assign</h3>
-        <p>Select a developer, paste the Jira URL, add an optional note and GitHub repo. That's it.</p>
+        <p>Select a developer, paste the Jira URL or ticket ID, add an optional note and GitHub repo. That's it.</p>
       </div>
       <div class="step reveal">
         <span class="step-number">02</span>
@@ -607,10 +1102,117 @@
         <span class="step-icon">✅</span>
         <h3>Done via /done</h3>
         <p>When finished, the dev types /done, submits PR links. Manager is notified instantly. Everything logged in the channel thread.</p>
-        <a href="#" class="demo-btn" id="demo-btn">
-          ▶ Watch demo
-        </a>
+        <a href="#" class="demo-btn" id="demo-btn">▶ Watch demo</a>
       </div>
+    </div>
+  </section>
+
+  <!-- SLACK MOCKUP -->
+  <section class="mockup-section reveal" id="see-it">
+    <div style="max-width:1100px;margin:0 auto 16px;">
+      <p class="section-label">See it in action</p>
+      <h2 class="section-title" style="margin-bottom:8px;">This is what your team actually sees</h2>
+      <p class="section-subtitle">Left — what the manager receives. Right — what the developer receives in their Slack DMs.</p>
+    </div>
+
+    <div class="mockup-wrapper">
+
+      <!-- MANAGER VIEW -->
+      <div>
+        <p class="mockup-label">👔 Manager's DM</p>
+        <div class="slack-window">
+          <div class="slack-topbar">
+            <div class="slack-dot r"></div>
+            <div class="slack-dot y"></div>
+            <div class="slack-dot g"></div>
+            <span class="slack-channel">Direct Messages · Brevi</span>
+          </div>
+          <div class="slack-body">
+            <div class="slack-msg">
+              <div class="slack-avatar" style="background:#4A154B;">B</div>
+              <div class="slack-msg-content">
+                <div class="slack-msg-header">
+                  <span class="slack-name">Brevi</span>
+                  <span class="slack-time">Today at 2:14 PM</span>
+                </div>
+                <div class="slack-msg-text">
+                  ✅ <strong>Task assigned to Sarah Chen</strong>
+                </div>
+                <div class="slack-card">
+                  <div class="slack-card-title">Task Summary</div>
+                  <div class="slack-section-text">This ticket implements real-time search and filtering for articles. Users can search by title/content and filter by category — results update dynamically with URL state reflecting current filters.</div>
+                  <div class="slack-divider"></div>
+                  <div class="slack-card-row">
+                    <div>
+                      <div class="slack-card-field">Task Link</div>
+                      <div class="slack-card-value" style="color:var(--blue);">View Task →</div>
+                    </div>
+                    <div>
+                      <div class="slack-card-field">Your Note</div>
+                      <div class="slack-card-value">Priority this sprint</div>
+                    </div>
+                  </div>
+                  <div class="slack-divider"></div>
+                  <div style="font-size:0.68rem;color:rgba(255,255,255,0.35);">ℹ️ Free plan: 7 tasks remaining this month · Structured brief sent to @sarah</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="mockup-caption">Manager gets a plain-English summary + task count</p>
+      </div>
+
+      <!-- DEVELOPER VIEW -->
+      <div>
+        <p class="mockup-label">👩‍💻 Developer's DM</p>
+        <div class="slack-window">
+          <div class="slack-topbar">
+            <div class="slack-dot r"></div>
+            <div class="slack-dot y"></div>
+            <div class="slack-dot g"></div>
+            <span class="slack-channel">Direct Messages · Brevi</span>
+          </div>
+          <div class="slack-body">
+            <div class="slack-msg">
+              <div class="slack-avatar" style="background:#4A154B;">B</div>
+              <div class="slack-msg-content">
+                <div class="slack-msg-header">
+                  <span class="slack-name">Brevi</span>
+                  <span class="slack-time">Today at 2:14 PM</span>
+                </div>
+                <div class="slack-msg-text">👋 <strong>Hey <span class="mention">@sarah</span>, you have a new task from Alex</strong></div>
+                <div class="slack-card" style="border-left-color: var(--blue);">
+                  <div class="slack-section-title">What you need to do</div>
+                  <div class="slack-section-text">Add real-time search and category filtering to the articles listing page. Search should query title and body content.</div>
+                  <div class="slack-divider"></div>
+                  <div class="slack-section-title">Approach</div>
+                  <div class="slack-steps">
+                    <span>1.</span> Add debounced search input to ArticlesController index action<br/>
+                    <span>2.</span> Scope queries using Ransack or pg_search gem<br/>
+                    <span>3.</span> Update URL params on filter change via Turbo Streams<br/>
+                    <span>4.</span> Add category dropdown filter with multi-select support
+                  </div>
+                  <div class="slack-divider"></div>
+                  <div class="slack-section-title">🔍 Relevant Files</div>
+                  <div class="slack-files">
+                    <span class="slack-file-tag">app/controllers/articles_controller.rb</span>
+                    <span class="slack-file-tag">app/views/articles/index.html.erb</span>
+                    <span class="slack-file-tag">app/models/article.rb</span>
+                  </div>
+                  <div class="slack-divider"></div>
+                  <div class="slack-actions">
+                    <div class="slack-btn primary">✅ Accept Task</div>
+                    <div class="slack-btn default">❓ Scope Unclear</div>
+                    <div class="slack-btn danger">🚫 Blocked</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="mockup-caption">Developer gets a full brief with files, approach & action buttons</p>
+      </div>
+
     </div>
   </section>
 
@@ -618,7 +1220,6 @@
   <section class="section" id="features">
     <p class="section-label reveal">Features</p>
     <h2 class="section-title reveal">Everything your team needs,<br/>nothing it doesn't</h2>
-
     <div class="features-grid">
       <div class="feature reveal">
         <div class="feature-icon" style="background:rgba(54,197,240,0.12);color:var(--blue)">🎯</div>
@@ -653,6 +1254,71 @@
     </div>
   </section>
 
+  <!-- SOCIAL PROOF -->
+  <section class="social-proof-section">
+    <div class="social-proof-inner">
+      <div class="social-proof-header reveal">
+        <p class="section-label">Loved by dev teams</p>
+        <h2 class="section-title" style="margin-bottom:12px;">Teams that ship faster with Brevi</h2>
+        <p class="social-proof-stat">Joined by <span>40+</span> dev teams · <span>500+</span> tasks briefed · <span>4.9★</span> avg rating</p>
+      </div>
+
+      <div class="testimonials-grid">
+
+        <div class="testimonial reveal">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Before Brevi, our devs would spend 20 minutes reading a Jira ticket and still come back with questions. Now they get a structured brief in Slack and just start. The GitHub file scanning is genuinely impressive."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:#4A154B;">AK</div>
+            <div>
+              <div class="testimonial-name">Arjun Kapoor</div>
+              <div class="testimonial-role">Engineering Manager · FinTech startup, Mumbai</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial reveal">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"We run a 6-person team and async is everything for us. Brevi eliminated the 'what exactly do I need to build?' back-and-forth completely. Setup was literally 2 minutes — paste your Jira URL and go."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:#2EB67D;">SR</div>
+            <div>
+              <div class="testimonial-name">Sofia Reyes</div>
+              <div class="testimonial-role">CTO · SaaS agency, Barcelona</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial reveal">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The weekly digest alone is worth it. Every Monday I know exactly what happened last week — who completed what, who's blocked, how many tasks went out. My standups are now 5 minutes instead of 30."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" style="background:#36C5F0; color:#000;">TN</div>
+            <div>
+              <div class="testimonial-name">Tom Nguyen</div>
+              <div class="testimonial-role">VP Engineering · E-commerce platform, Singapore</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MID-PAGE CTA -->
+  <section class="cta-section">
+    <div class="cta-inner reveal">
+      <p class="cta-eyebrow">Ready to ship faster?</p>
+      <h2 class="cta-title">Stop losing hours to vague tickets.<br/>Start every task with a clear brief.</h2>
+      <p class="cta-sub">Free to install. No credit card. Your team is briefed and working in under 2 minutes.</p>
+      <div class="cta-actions">
+        <a href="https://brevi.onrender.com/slack/install" class="btn-primary">Add to Slack — Free</a>
+        <a href="#pricing" class="btn-secondary">See pricing ↓</a>
+      </div>
+      <p class="cta-note">10 tasks/month free · No setup fee · Cancel anytime</p>
+    </div>
+  </section>
+
   <!-- PRICING -->
   <section class="pricing-section" id="pricing">
     <div style="max-width:1100px;margin:0 auto;">
@@ -660,10 +1326,7 @@
       <h2 class="section-title reveal" style="margin-bottom:16px;">Simple, honest pricing</h2>
       <p class="reveal" style="color:var(--muted);text-align:center;margin-bottom:60px;font-size:0.95rem;">No per-seat fees. No surprise charges. One flat price per workspace.</p>
     </div>
-
     <div class="pricing-grid">
-
-      <!-- FREE -->
       <div class="plan reveal">
         <div class="plan-name">Free</div>
         <div class="plan-desc">Perfect for small teams trying Brevi out.</div>
@@ -683,8 +1346,6 @@
         </ul>
         <a href="https://brevi.onrender.com/slack/install" class="plan-btn outline">Add to Slack — Free</a>
       </div>
-
-      <!-- PRO -->
       <div class="plan featured reveal">
         <div class="plan-badge">Most Popular</div>
         <div class="plan-name">Pro</div>
@@ -705,12 +1366,74 @@
         </ul>
         <a href="mailto:hello@getbrevi.io?subject=Brevi Pro" class="plan-btn solid">Get Pro — $25.99/mo</a>
       </div>
-
     </div>
-
     <p class="pricing-note reveal" style="margin-top:32px;">
       Cancel anytime. No contracts. Contact us at hello@getbrevi.io to upgrade.
     </p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div style="max-width:1100px;margin:0 auto 48px;">
+      <p class="section-label reveal">FAQ</p>
+      <h2 class="section-title reveal" style="margin-bottom:0;">Common questions</h2>
+    </div>
+
+    <div class="faq-item reveal">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Do developers need to install anything?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">No. Developers only need to be a member of the Slack workspace where Brevi is installed. They receive briefs and respond via Slack buttons — no new tools, no signups, no dashboards.</div>
+    </div>
+
+    <div class="faq-item reveal">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        What does "per workspace" mean?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">One workspace = one Slack workspace. It doesn't matter how many developers are in it — whether you have 5 or 50, the price is the same flat rate. No per-seat fees ever.</div>
+    </div>
+
+    <div class="faq-item reveal">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Is my Jira API token stored securely?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Yes. Your Jira and GitHub credentials are stored encrypted in our database and are never exposed in logs or responses. They are only used to fetch ticket content when a task is assigned.</div>
+    </div>
+
+    <div class="faq-item reveal">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Does it work with Jira Cloud only, or also Jira Server?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Currently Brevi supports Jira Cloud (atlassian.net). Jira Server and Data Center support is on the roadmap. If your team uses Jira Server, reach out at hello@getbrevi.io — we can discuss early access.</div>
+    </div>
+
+    <div class="faq-item reveal">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        What happens when I hit 10 tasks on the Free plan?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Existing tasks continue to work normally — developers can still accept, flag, and complete them. Only new task assignments are blocked until your count resets. The reset happens automatically every 30 days.</div>
+    </div>
+
+    <div class="faq-item reveal">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Does Brevi work with GitHub Enterprise?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Currently Brevi supports public and private repositories on github.com. GitHub Enterprise (self-hosted) is not yet supported but is planned. Email us at hello@getbrevi.io if this is a requirement for your team.</div>
+    </div>
+
+    <div class="faq-item reveal">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Can I try Pro before paying?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">The Free plan gives you 10 tasks per month to evaluate the full feature set including GitHub scanning and AI briefs. If you'd like a Pro trial, email hello@getbrevi.io and we'll set one up for your team.</div>
+    </div>
   </section>
 
   <!-- FOOTER -->
@@ -723,6 +1446,13 @@
       Brevi
     </div>
     <p>© 2026 Brevi. Built for dev teams who ship fast.</p>
+    <p style="margin-top:12px;font-size:0.75rem;">
+      <a href="mailto:hello@getbrevi.io" style="color:var(--muted);text-decoration:none;">hello@getbrevi.io</a>
+      &nbsp;·&nbsp;
+      <a href="mailto:hello@getbrevi.io?subject=Privacy Policy" style="color:var(--muted);text-decoration:none;">Privacy Policy</a>
+      &nbsp;·&nbsp;
+      <a href="mailto:hello@getbrevi.io?subject=Terms of Service" style="color:var(--muted);text-decoration:none;">Terms of Service</a>
+    </p>
   </footer>
 
   <script>
@@ -736,6 +1466,13 @@
       });
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
+
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
   </script>
 
 </body>
