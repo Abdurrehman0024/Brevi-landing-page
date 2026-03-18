@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brevi</title>
   <link rel="icon" type="image/png" href="brevi.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
       --purple: #4A154B;
@@ -19,10 +28,12 @@
       --surface: #1a001c;
       --text: #f0e6f1;
       --muted: #9b7f9d;
-      --border: rgba(74,21,75,0.5);
+      --border: rgba(74, 21, 75, 0.5);
     }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       background: var(--bg);
@@ -45,14 +56,16 @@
 
     nav {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       z-index: 100;
       padding: 20px 48px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       border-bottom: 1px solid var(--border);
-      background: rgba(14,0,16,0.85);
+      background: rgba(14, 0, 16, 0.85);
       backdrop-filter: blur(16px);
     }
 
@@ -68,17 +81,33 @@
     }
 
     .logo-mark {
-      width: 32px; height: 32px;
+      width: 32px;
+      height: 32px;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 3px;
     }
 
-    .logo-mark span { border-radius: 3px; display: block; }
-    .logo-mark span:nth-child(1) { background: var(--blue); }
-    .logo-mark span:nth-child(2) { background: var(--green); }
-    .logo-mark span:nth-child(3) { background: var(--yellow); }
-    .logo-mark span:nth-child(4) { background: var(--red); }
+    .logo-mark span {
+      border-radius: 3px;
+      display: block;
+    }
+
+    .logo-mark span:nth-child(1) {
+      background: var(--blue);
+    }
+
+    .logo-mark span:nth-child(2) {
+      background: var(--green);
+    }
+
+    .logo-mark span:nth-child(3) {
+      background: var(--yellow);
+    }
+
+    .logo-mark span:nth-child(4) {
+      background: var(--red);
+    }
 
     .nav-cta {
       font-family: 'DM Sans', sans-serif;
@@ -94,7 +123,10 @@
       transition: all 0.2s;
     }
 
-    .nav-cta:hover { background: #25a066; transform: translateY(-1px); }
+    .nav-cta:hover {
+      background: #25a066;
+      transform: translateY(-1px);
+    }
 
     .hero {
       min-height: 100vh;
@@ -109,10 +141,12 @@
 
     .hero-glow {
       position: absolute;
-      top: 20%; left: 50%;
+      top: 20%;
+      left: 50%;
       transform: translateX(-50%);
-      width: 600px; height: 600px;
-      background: radial-gradient(ellipse, rgba(74,21,75,0.6) 0%, transparent 70%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(ellipse, rgba(74, 21, 75, 0.6) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -121,25 +155,33 @@
       align-items: center;
       gap: 8px;
       padding: 6px 16px;
-      border: 1px solid rgba(54,197,240,0.3);
+      border: 1px solid rgba(54, 197, 240, 0.3);
       border-radius: 100px;
       font-size: 0.8rem;
       color: var(--blue);
       margin-bottom: 32px;
-      background: rgba(54,197,240,0.06);
+      background: rgba(54, 197, 240, 0.06);
       animation: fadeUp 0.6s ease both;
     }
 
     .badge-dot {
-      width: 6px; height: 6px;
+      width: 6px;
+      height: 6px;
       background: var(--blue);
       border-radius: 50%;
       animation: pulse 2s ease infinite;
     }
 
     @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.3;
+      }
     }
 
     h1 {
@@ -197,7 +239,7 @@
     .btn-primary:hover {
       background: #25a066;
       transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(46,182,125,0.3);
+      box-shadow: 0 8px 30px rgba(46, 182, 125, 0.3);
     }
 
     .btn-secondary {
@@ -215,13 +257,20 @@
     }
 
     .btn-secondary:hover {
-      border-color: rgba(74,21,75,0.9);
-      background: rgba(74,21,75,0.15);
+      border-color: rgba(74, 21, 75, 0.9);
+      background: rgba(74, 21, 75, 0.15);
     }
 
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .section {
@@ -266,19 +315,35 @@
       transition: border-color 0.2s, transform 0.2s;
     }
 
-    .step:hover { transform: translateY(-4px); border-color: rgba(74,21,75,0.9); }
+    .step:hover {
+      transform: translateY(-4px);
+      border-color: rgba(74, 21, 75, 0.9);
+    }
 
     .step::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       height: 3px;
     }
 
-    .step:nth-child(1)::before { background: var(--blue); }
-    .step:nth-child(2)::before { background: var(--green); }
-    .step:nth-child(3)::before { background: var(--yellow); }
-    .step:nth-child(4)::before { background: var(--red); }
+    .step:nth-child(1)::before {
+      background: var(--blue);
+    }
+
+    .step:nth-child(2)::before {
+      background: var(--green);
+    }
+
+    .step:nth-child(3)::before {
+      background: var(--yellow);
+    }
+
+    .step:nth-child(4)::before {
+      background: var(--red);
+    }
 
     .step-number {
       font-family: 'Syne', sans-serif;
@@ -286,11 +351,16 @@
       font-weight: 800;
       opacity: 0.08;
       position: absolute;
-      top: 16px; right: 24px;
+      top: 16px;
+      right: 24px;
       line-height: 1;
     }
 
-    .step-icon { font-size: 1.8rem; margin-bottom: 16px; display: block; }
+    .step-icon {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+      display: block;
+    }
 
     .step h3 {
       font-family: 'Syne', sans-serif;
@@ -300,7 +370,11 @@
       letter-spacing: -0.02em;
     }
 
-    .step p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+    .step p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
 
     .demo-btn {
       display: inline-flex;
@@ -308,8 +382,8 @@
       gap: 8px;
       margin-top: 16px;
       padding: 8px 16px;
-      background: rgba(54,197,240,0.1);
-      border: 1px solid rgba(54,197,240,0.3);
+      background: rgba(54, 197, 240, 0.1);
+      border: 1px solid rgba(54, 197, 240, 0.3);
       border-radius: 8px;
       color: var(--blue);
       font-size: 0.8rem;
@@ -319,7 +393,7 @@
     }
 
     .demo-btn:hover {
-      background: rgba(54,197,240,0.2);
+      background: rgba(54, 197, 240, 0.2);
       transform: translateY(-1px);
     }
 
@@ -337,10 +411,14 @@
       transition: all 0.2s;
     }
 
-    .feature:hover { border-color: rgba(74,21,75,0.9); transform: translateY(-3px); }
+    .feature:hover {
+      border-color: rgba(74, 21, 75, 0.9);
+      transform: translateY(-3px);
+    }
 
     .feature-icon {
-      width: 44px; height: 44px;
+      width: 44px;
+      height: 44px;
       border-radius: 10px;
       display: flex;
       align-items: center;
@@ -349,8 +427,18 @@
       margin-bottom: 16px;
     }
 
-    .feature h3 { font-family: 'Syne', sans-serif; font-weight: 600; font-size: 1rem; margin-bottom: 8px; }
-    .feature p { font-size: 0.875rem; color: var(--muted); line-height: 1.6; }
+    .feature h3 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .feature p {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
 
     /* ─── SLACK MOCKUP ─────────────────────────────────────────────────────── */
 
@@ -362,8 +450,16 @@
     }
 
     .mockup-section .section-label,
-    .mockup-section .section-title { max-width: 1100px; margin-left: auto; margin-right: auto; }
-    .mockup-section .section-title { margin-bottom: 16px; }
+    .mockup-section .section-title {
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .mockup-section .section-title {
+      margin-bottom: 16px;
+    }
+
     .mockup-section .section-subtitle {
       max-width: 1100px;
       margin: 0 auto 60px;
@@ -381,7 +477,9 @@
     }
 
     @media (max-width: 768px) {
-      .mockup-wrapper { grid-template-columns: 1fr; }
+      .mockup-wrapper {
+        grid-template-columns: 1fr;
+      }
     }
 
     .mockup-label {
@@ -396,9 +494,9 @@
     .slack-window {
       background: #1a1d21;
       border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       overflow: hidden;
-      box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
     }
 
     .slack-topbar {
@@ -407,22 +505,37 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
-    .slack-dot { width: 10px; height: 10px; border-radius: 50%; }
-    .slack-dot.r { background: #ff5f57; }
-    .slack-dot.y { background: #febc2e; }
-    .slack-dot.g { background: #28c840; }
+    .slack-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .slack-dot.r {
+      background: #ff5f57;
+    }
+
+    .slack-dot.y {
+      background: #febc2e;
+    }
+
+    .slack-dot.g {
+      background: #28c840;
+    }
 
     .slack-channel {
       margin-left: 8px;
       font-size: 0.75rem;
-      color: rgba(255,255,255,0.4);
+      color: rgba(255, 255, 255, 0.4);
       font-family: monospace;
     }
 
-    .slack-body { padding: 16px; }
+    .slack-body {
+      padding: 16px;
+    }
 
     .slack-msg {
       display: flex;
@@ -431,7 +544,8 @@
     }
 
     .slack-avatar {
-      width: 32px; height: 32px;
+      width: 32px;
+      height: 32px;
       border-radius: 6px;
       flex-shrink: 0;
       display: flex;
@@ -442,7 +556,9 @@
       color: #fff;
     }
 
-    .slack-msg-content { flex: 1; }
+    .slack-msg-content {
+      flex: 1;
+    }
 
     .slack-msg-header {
       display: flex;
@@ -451,8 +567,16 @@
       margin-bottom: 4px;
     }
 
-    .slack-name { font-size: 0.8rem; font-weight: 700; color: #fff; }
-    .slack-time { font-size: 0.65rem; color: rgba(255,255,255,0.3); }
+    .slack-name {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .slack-time {
+      font-size: 0.65rem;
+      color: rgba(255, 255, 255, 0.3);
+    }
 
     .slack-msg-text {
       font-size: 0.78rem;
@@ -460,9 +584,22 @@
       line-height: 1.5;
     }
 
-    .slack-msg-text strong { color: #fff; font-weight: 600; }
-    .slack-msg-text .mention { color: #36C5F0; }
-    .slack-msg-text .code { background: rgba(255,255,255,0.1); padding: 1px 5px; border-radius: 3px; font-family: monospace; font-size: 0.72rem; }
+    .slack-msg-text strong {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .slack-msg-text .mention {
+      color: #36C5F0;
+    }
+
+    .slack-msg-text .code {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-family: monospace;
+      font-size: 0.72rem;
+    }
 
     .slack-card {
       background: #222529;
@@ -486,19 +623,26 @@
       margin-bottom: 6px;
     }
 
-    .slack-card-field { font-size: 0.7rem; color: rgba(255,255,255,0.5); }
-    .slack-card-value { font-size: 0.72rem; color: #d1d2d3; }
+    .slack-card-field {
+      font-size: 0.7rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .slack-card-value {
+      font-size: 0.72rem;
+      color: #d1d2d3;
+    }
 
     .slack-divider {
       height: 1px;
-      background: rgba(255,255,255,0.06);
+      background: rgba(255, 255, 255, 0.06);
       margin: 12px 0;
     }
 
     .slack-section-title {
       font-size: 0.72rem;
       font-weight: 700;
-      color: rgba(255,255,255,0.7);
+      color: rgba(255, 255, 255, 0.7);
       margin-bottom: 6px;
     }
 
@@ -515,7 +659,10 @@
       line-height: 1.8;
     }
 
-    .slack-steps span { color: var(--green); font-weight: 600; }
+    .slack-steps span {
+      color: var(--green);
+      font-weight: 600;
+    }
 
     .slack-files {
       display: flex;
@@ -525,7 +672,7 @@
     }
 
     .slack-file-tag {
-      background: rgba(54,197,240,0.12);
+      background: rgba(54, 197, 240, 0.12);
       color: var(--blue);
       font-size: 0.65rem;
       padding: 2px 8px;
@@ -548,9 +695,22 @@
       cursor: default;
     }
 
-    .slack-btn.primary { background: #007a5a; color: #fff; }
-    .slack-btn.default { background: #2c2d30; color: #d1d2d3; border: 1px solid rgba(255,255,255,0.1); }
-    .slack-btn.danger { background: rgba(224,30,90,0.15); color: var(--red); border: 1px solid rgba(224,30,90,0.3); }
+    .slack-btn.primary {
+      background: #007a5a;
+      color: #fff;
+    }
+
+    .slack-btn.default {
+      background: #2c2d30;
+      color: #d1d2d3;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .slack-btn.danger {
+      background: rgba(224, 30, 90, 0.15);
+      color: var(--red);
+      border: 1px solid rgba(224, 30, 90, 0.3);
+    }
 
     .mockup-caption {
       font-size: 0.78rem;
@@ -568,7 +728,9 @@
     }
 
     .pricing-section .section-title,
-    .pricing-section .section-label { text-align: center; }
+    .pricing-section .section-label {
+      text-align: center;
+    }
 
     .pricing-grid {
       display: grid;
@@ -587,16 +749,19 @@
       transition: all 0.2s;
     }
 
-    .plan:hover { transform: translateY(-4px); }
+    .plan:hover {
+      transform: translateY(-4px);
+    }
 
     .plan.featured {
       border-color: var(--green);
-      background: linear-gradient(160deg, rgba(46,182,125,0.08) 0%, var(--surface) 60%);
+      background: linear-gradient(160deg, rgba(46, 182, 125, 0.08) 0%, var(--surface) 60%);
     }
 
     .plan-badge {
       position: absolute;
-      top: -14px; left: 50%;
+      top: -14px;
+      left: 50%;
       transform: translateX(-50%);
       background: var(--green);
       color: #000;
@@ -609,9 +774,24 @@
       white-space: nowrap;
     }
 
-    .plan-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.2rem; margin-bottom: 8px; letter-spacing: -0.01em; }
-    .plan-desc { font-size: 0.875rem; color: var(--muted); margin-bottom: 28px; line-height: 1.5; }
-    .plan-price { margin-bottom: 32px; }
+    .plan-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .plan-desc {
+      font-size: 0.875rem;
+      color: var(--muted);
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+
+    .plan-price {
+      margin-bottom: 32px;
+    }
 
     .price-amount {
       font-family: 'Syne', sans-serif;
@@ -631,8 +811,8 @@
     .cta-inner {
       max-width: 860px;
       margin: 0 auto;
-      background: linear-gradient(135deg, rgba(74,21,75,0.5) 0%, rgba(54,197,240,0.08) 100%);
-      border: 1px solid rgba(74,21,75,0.6);
+      background: linear-gradient(135deg, rgba(74, 21, 75, 0.5) 0%, rgba(54, 197, 240, 0.08) 100%);
+      border: 1px solid rgba(74, 21, 75, 0.6);
       border-radius: 24px;
       padding: 64px 48px;
       text-align: center;
@@ -643,18 +823,22 @@
     .cta-inner::before {
       content: '';
       position: absolute;
-      top: -60px; right: -60px;
-      width: 200px; height: 200px;
-      background: radial-gradient(ellipse, rgba(54,197,240,0.15) 0%, transparent 70%);
+      top: -60px;
+      right: -60px;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(ellipse, rgba(54, 197, 240, 0.15) 0%, transparent 70%);
       pointer-events: none;
     }
 
     .cta-inner::after {
       content: '';
       position: absolute;
-      bottom: -60px; left: -60px;
-      width: 200px; height: 200px;
-      background: radial-gradient(ellipse, rgba(46,182,125,0.12) 0%, transparent 70%);
+      bottom: -60px;
+      left: -60px;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(ellipse, rgba(46, 182, 125, 0.12) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -693,7 +877,10 @@
       margin-bottom: 20px;
     }
 
-    .cta-note { font-size: 0.75rem; color: var(--muted); }
+    .cta-note {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
 
     /* ─── TRUST SIGNALS ────────────────────────────────────────────────────── */
     .trust-bar {
@@ -702,7 +889,7 @@
       z-index: 1;
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
-      background: rgba(255,255,255,0.01);
+      background: rgba(255, 255, 255, 0.01);
     }
 
     .trust-bar-inner {
@@ -724,9 +911,10 @@
     }
 
     .trust-icon {
-      width: 32px; height: 32px;
+      width: 32px;
+      height: 32px;
       border-radius: 8px;
-      background: rgba(255,255,255,0.04);
+      background: rgba(255, 255, 255, 0.04);
       border: 1px solid var(--border);
       display: flex;
       align-items: center;
@@ -735,7 +923,12 @@
       flex-shrink: 0;
     }
 
-    .trust-item strong { color: var(--text); font-weight: 500; display: block; font-size: 0.82rem; }
+    .trust-item strong {
+      color: var(--text);
+      font-weight: 500;
+      display: block;
+      font-size: 0.82rem;
+    }
 
     /* ─── SOCIAL PROOF ─────────────────────────────────────────────────────── */
     .social-proof-section {
@@ -781,7 +974,10 @@
       transition: border-color 0.2s, transform 0.2s;
     }
 
-    .testimonial:hover { border-color: rgba(74,21,75,0.9); transform: translateY(-3px); }
+    .testimonial:hover {
+      border-color: rgba(74, 21, 75, 0.9);
+      transform: translateY(-3px);
+    }
 
     .testimonial-stars {
       color: var(--yellow);
@@ -805,7 +1001,8 @@
     }
 
     .testimonial-avatar {
-      width: 36px; height: 36px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -816,8 +1013,16 @@
       flex-shrink: 0;
     }
 
-    .testimonial-name { font-size: 0.82rem; font-weight: 600; color: var(--text); }
-    .testimonial-role { font-size: 0.75rem; color: var(--muted); }
+    .testimonial-name {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .testimonial-role {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
 
     /* ─── FAQ ──────────────────────────────────────────────────────────────── */
     .faq-section {
@@ -850,11 +1055,14 @@
       transition: color 0.2s;
     }
 
-    .faq-question:hover { color: var(--blue); }
+    .faq-question:hover {
+      color: var(--blue);
+    }
 
     .faq-icon {
       flex-shrink: 0;
-      width: 20px; height: 20px;
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
       border: 1px solid var(--border);
       display: flex;
@@ -886,7 +1094,11 @@
       padding-bottom: 20px;
     }
 
-    .price-period { font-size: 0.9rem; color: var(--muted); margin-top: 4px; }
+    .price-period {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
 
     .plan-features {
       list-style: none;
@@ -906,7 +1118,8 @@
 
     .plan-features li .check {
       flex-shrink: 0;
-      width: 18px; height: 18px;
+      width: 18px;
+      height: 18px;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -915,9 +1128,19 @@
       margin-top: 2px;
     }
 
-    .plan:not(.featured) .check { background: rgba(255,255,255,0.1); color: var(--muted); }
-    .plan.featured .check { background: rgba(46,182,125,0.2); color: var(--green); }
-    .plan-features li.dimmed { color: var(--muted); }
+    .plan:not(.featured) .check {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--muted);
+    }
+
+    .plan.featured .check {
+      background: rgba(46, 182, 125, 0.2);
+      color: var(--green);
+    }
+
+    .plan-features li.dimmed {
+      color: var(--muted);
+    }
 
     .plan-btn {
       width: 100%;
@@ -940,11 +1163,28 @@
       color: var(--text);
     }
 
-    .plan-btn.outline:hover { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.05); }
-    .plan-btn.solid { background: var(--green); color: #000; }
-    .plan-btn.solid:hover { background: #25a066; box-shadow: 0 8px 30px rgba(46,182,125,0.3); transform: translateY(-1px); }
+    .plan-btn.outline:hover {
+      border-color: rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.05);
+    }
 
-    .pricing-note { text-align: center; font-size: 0.8rem; color: var(--muted); margin-top: 24px; }
+    .plan-btn.solid {
+      background: var(--green);
+      color: #000;
+    }
+
+    .plan-btn.solid:hover {
+      background: #25a066;
+      box-shadow: 0 8px 30px rgba(46, 182, 125, 0.3);
+      transform: translateY(-1px);
+    }
+
+    .pricing-note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 24px;
+    }
 
     .color-bar {
       height: 3px;
@@ -975,22 +1215,31 @@
       gap: 8px;
     }
 
-    .footer-logo .logo-mark { width: 24px; height: 24px; }
-    footer p { font-size: 0.8rem; color: var(--muted); }
+    .footer-logo .logo-mark {
+      width: 24px;
+      height: 24px;
+    }
+
+    footer p {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
 
     .slack-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       padding: 8px 18px;
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 8px;
       font-size: 0.8rem;
       color: var(--muted);
       margin-top: 48px;
     }
 
-    .slack-badge svg { opacity: 0.6; }
+    .slack-badge svg {
+      opacity: 0.6;
+    }
 
     .reveal {
       opacity: 0;
@@ -998,9 +1247,199 @@
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── VIDEO MODAL ───────────────────────────────────────────────────────── */
+    .video-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+
+    .video-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .video-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(5, 5, 10, 0.75);
+      backdrop-filter: blur(18px) saturate(0.7);
+      -webkit-backdrop-filter: blur(18px) saturate(0.7);
+      cursor: pointer;
+    }
+
+    .video-modal {
+      position: relative;
+      z-index: 1;
+      width: calc(100vw - 32px);
+      height: calc(100vh - 32px);
+      display: flex;
+      flex-direction: column;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #0d0d14;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 0 1px rgba(74, 21, 75, 0.4),
+        0 32px 80px rgba(0, 0, 0, 0.8),
+        0 0 80px rgba(74, 21, 75, 0.3);
+      transform: scale(0.96) translateY(20px);
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .video-overlay.open .video-modal {
+      transform: scale(1) translateY(0);
+    }
+
+    .video-modal-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      background: rgba(255, 255, 255, 0.03);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .video-modal-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: rgba(255, 255, 255, 0.5);
+      text-transform: uppercase;
+    }
+
+    .video-modal-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .video-ctrl-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.06);
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      line-height: 1;
+      padding: 0;
+      flex-shrink: 0;
+    }
+
+    .video-ctrl-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.25);
+      color: #fff;
+    }
+
+    .video-ctrl-btn.close-btn:hover {
+      background: rgba(224, 30, 90, 0.25);
+      border-color: rgba(224, 30, 90, 0.5);
+      color: #e01e5a;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      flex: 1;
+      min-height: 0;
+      background: #000;
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+    }
+
+    /* bottom controls bar */
+    .video-controls-bar {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 12px 16px 14px;
+      background: rgba(0, 0, 0, 0.55);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    /* progress / seek bar */
+    .video-progress-wrap {
+      position: relative;
+      width: 100%;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: height 0.15s ease;
+    }
+
+    .video-progress-wrap:hover {
+      height: 6px;
+    }
+
+    .video-progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #4A154B, #9333ea);
+      border-radius: 4px;
+      position: relative;
+      pointer-events: none;
+    }
+
+    .video-progress-fill::after {
+      content: '';
+      position: absolute;
+      right: -5px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #c084fc;
+      box-shadow: 0 0 8px rgba(192, 132, 252, 0.8);
+      opacity: 0;
+      transition: opacity 0.15s ease;
+    }
+
+    .video-progress-wrap:hover .video-progress-fill::after {
+      opacity: 1;
+    }
+
+    .video-controls-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .video-time {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.45);
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
   </style>
 </head>
+
 <body>
 
   <!-- NAV -->
@@ -1023,18 +1462,22 @@
       Lives inside Slack — no new tools
     </div>
     <h1>
-      Stop explaining tickets.<br/>
+      Stop explaining tickets.<br />
       <span class="h1-line2">Start shipping.</span>
     </h1>
     <p class="hero-sub">
-      Brevi turns Jira tickets into structured AI briefs — delivered to your developers in Slack. No back-and-forth, no vague handoffs, no context lost.
+      Brevi turns Jira tickets into structured AI briefs — delivered to your developers in Slack. No back-and-forth, no
+      vague handoffs, no context lost.
     </p>
     <div class="hero-actions">
       <a href="https://brevi.onrender.com/slack/install" class="btn-primary">Add to Slack — Free</a>
       <a href="#how-it-works" class="btn-secondary">See how it works ↓</a>
     </div>
     <div class="slack-badge">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+        <path
+          d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z" />
+      </svg>
       Built exclusively for Slack workspaces
     </div>
   </section>
@@ -1077,7 +1520,8 @@
   <section class="section" id="how-it-works">
     <div class="color-bar" style="margin-bottom: 80px;"></div>
     <p class="section-label reveal">How it works</p>
-    <h2 class="section-title reveal">From <em style="font-style:normal;color:var(--blue)">task</em> to <em style="font-style:normal;color:var(--green)">brief</em> in seconds</h2>
+    <h2 class="section-title reveal">From <em style="font-style:normal;color:var(--blue)">task</em> to <em
+        style="font-style:normal;color:var(--green)">brief</em> in seconds</h2>
     <div class="steps">
       <div class="step reveal">
         <span class="step-number">01</span>
@@ -1089,20 +1533,23 @@
         <span class="step-number">02</span>
         <span class="step-icon">🤖</span>
         <h3>AI reads the ticket</h3>
-        <p>Brevi fetches your Jira ticket and generates two things — a plain summary for the manager and a structured brief for the developer, plus a GitHub repo scan for relevant files.</p>
+        <p>Brevi fetches your Jira ticket and generates two things — a plain summary for the manager and a structured
+          brief for the developer, plus a GitHub repo scan for relevant files.</p>
       </div>
       <div class="step reveal">
         <span class="step-number">03</span>
         <span class="step-icon">📩</span>
         <h3>Developer gets briefed</h3>
-        <p>The dev receives a clean DM with a structured approach, relevant files, and Accept / Scope Unclear / Blocked buttons.</p>
+        <p>The dev receives a clean DM with a structured approach, relevant files, and Accept / Scope Unclear / Blocked
+          buttons.</p>
       </div>
       <div class="step reveal">
         <span class="step-number">04</span>
         <span class="step-icon">✅</span>
         <h3>Done via /done</h3>
-        <p>When finished, the dev types /done, submits PR links. Manager is notified instantly. Everything logged in the channel thread.</p>
-        <a href="#" class="demo-btn" id="demo-btn">▶ Watch demo</a>
+        <p>When finished, the dev types /done, submits PR links. Manager is notified instantly. Everything logged in the
+          channel thread.</p>
+        <button class="demo-btn" id="demo-btn" onclick="openDemoVideo()">▶ Watch demo</button>
       </div>
     </div>
   </section>
@@ -1112,7 +1559,8 @@
     <div style="max-width:1100px;margin:0 auto 16px;">
       <p class="section-label">See it in action</p>
       <h2 class="section-title" style="margin-bottom:8px;">This is what your team actually sees</h2>
-      <p class="section-subtitle">Left — what the manager receives. Right — what the developer receives in their Slack DMs.</p>
+      <p class="section-subtitle">Left — what the manager receives. Right — what the developer receives in their Slack
+        DMs.</p>
     </div>
 
     <div class="mockup-wrapper">
@@ -1140,7 +1588,9 @@
                 </div>
                 <div class="slack-card">
                   <div class="slack-card-title">Task Summary</div>
-                  <div class="slack-section-text">This ticket implements real-time search and filtering for articles. Users can search by title/content and filter by category — results update dynamically with URL state reflecting current filters.</div>
+                  <div class="slack-section-text">This ticket implements real-time search and filtering for articles.
+                    Users can search by title/content and filter by category — results update dynamically with URL state
+                    reflecting current filters.</div>
                   <div class="slack-divider"></div>
                   <div class="slack-card-row">
                     <div>
@@ -1153,7 +1603,8 @@
                     </div>
                   </div>
                   <div class="slack-divider"></div>
-                  <div style="font-size:0.68rem;color:rgba(255,255,255,0.35);">ℹ️ Free plan: 7 tasks remaining this month · Structured brief sent to @sarah</div>
+                  <div style="font-size:0.68rem;color:rgba(255,255,255,0.35);">ℹ️ Free plan: 7 tasks remaining this
+                    month · Structured brief sent to @sarah</div>
                 </div>
               </div>
             </div>
@@ -1180,16 +1631,18 @@
                   <span class="slack-name">Brevi</span>
                   <span class="slack-time">Today at 2:14 PM</span>
                 </div>
-                <div class="slack-msg-text">👋 <strong>Hey <span class="mention">@sarah</span>, you have a new task from Alex</strong></div>
+                <div class="slack-msg-text">👋 <strong>Hey <span class="mention">@sarah</span>, you have a new task from
+                    Alex</strong></div>
                 <div class="slack-card" style="border-left-color: var(--blue);">
                   <div class="slack-section-title">What you need to do</div>
-                  <div class="slack-section-text">Add real-time search and category filtering to the articles listing page. Search should query title and body content.</div>
+                  <div class="slack-section-text">Add real-time search and category filtering to the articles listing
+                    page. Search should query title and body content.</div>
                   <div class="slack-divider"></div>
                   <div class="slack-section-title">Approach</div>
                   <div class="slack-steps">
-                    <span>1.</span> Add debounced search input to ArticlesController index action<br/>
-                    <span>2.</span> Scope queries using Ransack or pg_search gem<br/>
-                    <span>3.</span> Update URL params on filter change via Turbo Streams<br/>
+                    <span>1.</span> Add debounced search input to ArticlesController index action<br />
+                    <span>2.</span> Scope queries using Ransack or pg_search gem<br />
+                    <span>3.</span> Update URL params on filter change via Turbo Streams<br />
                     <span>4.</span> Add category dropdown filter with multi-select support
                   </div>
                   <div class="slack-divider"></div>
@@ -1219,55 +1672,65 @@
   <!-- FEATURES -->
   <section class="section" id="features">
     <p class="section-label reveal">Features</p>
-    <h2 class="section-title reveal">Everything your team needs,<br/>nothing it doesn't</h2>
+    <h2 class="section-title reveal">Everything your team needs,<br />nothing it doesn't</h2>
     <div class="features-grid">
       <div class="feature reveal">
         <div class="feature-icon" style="background:rgba(54,197,240,0.12);color:var(--blue)">🎯</div>
         <h3>AI-Generated Briefs & Summaries</h3>
-        <p>Brevi reads your Jira ticket and sends the manager a plain-English task summary, while the developer gets a structured brief with approach, focus areas, and potential risks.</p>
+        <p>Brevi reads your Jira ticket and sends the manager a plain-English task summary, while the developer gets a
+          structured brief with approach, focus areas, and potential risks.</p>
       </div>
       <div class="feature reveal">
         <div class="feature-icon" style="background:rgba(46,182,125,0.12);color:var(--green)">🔍</div>
         <h3>GitHub Repo Intelligence</h3>
-        <p>Automatically identifies which files in your codebase are relevant to the task. No more guessing where to start.</p>
+        <p>Automatically identifies which files in your codebase are relevant to the task. No more guessing where to
+          start.</p>
       </div>
       <div class="feature reveal">
         <div class="feature-icon" style="background:rgba(236,178,46,0.12);color:var(--yellow)">🧵</div>
         <h3>Channel Threading</h3>
-        <p>Every task has its own thread. Acceptance, blockers, clarifications, and completion — all organized automatically.</p>
+        <p>Every task has its own thread. Acceptance, blockers, clarifications, and completion — all organized
+          automatically.</p>
       </div>
       <div class="feature reveal">
         <div class="feature-icon" style="background:rgba(224,30,90,0.12);color:var(--red)">⚠️</div>
         <h3>PR Conflict Detection</h3>
-        <p>Before the dev starts, Brevi checks open PRs for file conflicts and warns both manager and developer upfront.</p>
+        <p>Before the dev starts, Brevi checks open PRs for file conflicts and warns both manager and developer upfront.
+        </p>
       </div>
       <div class="feature reveal">
         <div class="feature-icon" style="background:rgba(74,21,75,0.3);color:#c084fc">💬</div>
         <h3>Scope Clarification Flow</h3>
-        <p>Dev flags scope unclear → manager gets a Send Clarification button → dev gets fresh Accept buttons. All in Slack.</p>
+        <p>Dev flags scope unclear → manager gets a Send Clarification button → dev gets fresh Accept buttons. All in
+          Slack.</p>
       </div>
       <div class="feature reveal">
         <div class="feature-icon" style="background:rgba(54,197,240,0.12);color:var(--blue)">📊</div>
         <h3>Weekly Digest & Status Reports</h3>
-        <p>Every Friday, managers receive a full digest of team activity. Run /brevi-status anytime for a live snapshot.</p>
+        <p>Every Friday, managers receive a full digest of team activity. Run /brevi-status anytime for a live snapshot.
+        </p>
       </div>
     </div>
   </section>
 
   <!-- SOCIAL PROOF -->
-  <section class="social-proof-section">
+  <!-- <section class="social-proof-section">
     <div class="social-proof-inner">
       <div class="social-proof-header reveal">
         <p class="section-label">Loved by dev teams</p>
         <h2 class="section-title" style="margin-bottom:12px;">Teams that ship faster with Brevi</h2>
-        <p class="social-proof-stat">Joined by <span>40+</span> dev teams · <span>500+</span> tasks briefed · <span>4.9★</span> avg rating</p>
+        <p class="social-proof-stat">Joined by <span>40+</span> dev teams · <span>500+</span> tasks briefed ·
+          <span>4.9★</span> avg rating
+        </p>
       </div>
 
       <div class="testimonials-grid">
 
         <div class="testimonial reveal">
           <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Before Brevi, our devs would spend 20 minutes reading a Jira ticket and still come back with questions. Now they get a structured brief in Slack and just start. The GitHub file scanning is genuinely impressive."</p>
+          <p class="testimonial-text">"Before Brevi, our devs would spend 20 minutes reading a Jira ticket and still
+            come back with questions. Now they get a structured brief in Slack and just start. The GitHub file scanning
+            is genuinely impressive."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar" style="background:#4A154B;">AK</div>
             <div>
@@ -1279,7 +1742,9 @@
 
         <div class="testimonial reveal">
           <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"We run a 6-person team and async is everything for us. Brevi eliminated the 'what exactly do I need to build?' back-and-forth completely. Setup was literally 2 minutes — paste your Jira URL and go."</p>
+          <p class="testimonial-text">"We run a 6-person team and async is everything for us. Brevi eliminated the 'what
+            exactly do I need to build?' back-and-forth completely. Setup was literally 2 minutes — paste your Jira URL
+            and go."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar" style="background:#2EB67D;">SR</div>
             <div>
@@ -1291,7 +1756,9 @@
 
         <div class="testimonial reveal">
           <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"The weekly digest alone is worth it. Every Monday I know exactly what happened last week — who completed what, who's blocked, how many tasks went out. My standups are now 5 minutes instead of 30."</p>
+          <p class="testimonial-text">"The weekly digest alone is worth it. Every Monday I know exactly what happened
+            last week — who completed what, who's blocked, how many tasks went out. My standups are now 5 minutes
+            instead of 30."</p>
           <div class="testimonial-author">
             <div class="testimonial-avatar" style="background:#36C5F0; color:#000;">TN</div>
             <div>
@@ -1303,13 +1770,13 @@
 
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- MID-PAGE CTA -->
   <section class="cta-section">
     <div class="cta-inner reveal">
       <p class="cta-eyebrow">Ready to ship faster?</p>
-      <h2 class="cta-title">Stop losing hours to vague tickets.<br/>Start every task with a clear brief.</h2>
+      <h2 class="cta-title">Stop losing hours to vague tickets.<br />Start every task with a clear brief.</h2>
       <p class="cta-sub">Free to install. No credit card. Your team is briefed and working in under 2 minutes.</p>
       <div class="cta-actions">
         <a href="https://brevi.onrender.com/slack/install" class="btn-primary">Add to Slack — Free</a>
@@ -1324,7 +1791,8 @@
     <div style="max-width:1100px;margin:0 auto;">
       <p class="section-label reveal">Pricing</p>
       <h2 class="section-title reveal" style="margin-bottom:16px;">Simple, honest pricing</h2>
-      <p class="reveal" style="color:var(--muted);text-align:center;margin-bottom:60px;font-size:0.95rem;">No per-seat fees. No surprise charges. One flat price per workspace.</p>
+      <p class="reveal" style="color:var(--muted);text-align:center;margin-bottom:60px;font-size:0.95rem;">No per-seat
+        fees. No surprise charges. One flat price per workspace.</p>
     </div>
     <div class="pricing-grid">
       <div class="plan reveal">
@@ -1351,7 +1819,7 @@
         <div class="plan-name">Pro</div>
         <div class="plan-desc">For growing dev teams that need the full experience.</div>
         <div class="plan-price">
-          <div class="price-amount" style="color:var(--green)">$25.99</div>
+          <div class="price-amount" style="color:var(--green)">$28.99</div>
           <div class="price-period">per workspace / month</div>
         </div>
         <ul class="plan-features">
@@ -1384,7 +1852,8 @@
         Do developers need to install anything?
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-answer">No. Developers only need to be a member of the Slack workspace where Brevi is installed. They receive briefs and respond via Slack buttons — no new tools, no signups, no dashboards.</div>
+      <div class="faq-answer">No. Developers only need to be a member of the Slack workspace where Brevi is installed.
+        They receive briefs and respond via Slack buttons — no new tools, no signups, no dashboards.</div>
     </div>
 
     <div class="faq-item reveal">
@@ -1392,7 +1861,8 @@
         What does "per workspace" mean?
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-answer">One workspace = one Slack workspace. It doesn't matter how many developers are in it — whether you have 5 or 50, the price is the same flat rate. No per-seat fees ever.</div>
+      <div class="faq-answer">One workspace = one Slack workspace. It doesn't matter how many developers are in it —
+        whether you have 5 or 50, the price is the same flat rate. No per-seat fees ever.</div>
     </div>
 
     <div class="faq-item reveal">
@@ -1400,7 +1870,8 @@
         Is my Jira API token stored securely?
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-answer">Yes. Your Jira and GitHub credentials are stored encrypted in our database and are never exposed in logs or responses. They are only used to fetch ticket content when a task is assigned.</div>
+      <div class="faq-answer">Yes. Your Jira and GitHub credentials are stored encrypted in our database and are never
+        exposed in logs or responses. They are only used to fetch ticket content when a task is assigned.</div>
     </div>
 
     <div class="faq-item reveal">
@@ -1408,7 +1879,9 @@
         Does it work with Jira Cloud only, or also Jira Server?
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-answer">Currently Brevi supports Jira Cloud (atlassian.net). Jira Server and Data Center support is on the roadmap. If your team uses Jira Server, reach out at hello@getbrevi.io — we can discuss early access.</div>
+      <div class="faq-answer">Currently Brevi supports Jira Cloud (atlassian.net). Jira Server and Data Center support
+        is on the roadmap. If your team uses Jira Server, reach out at hello@getbrevi.io — we can discuss early access.
+      </div>
     </div>
 
     <div class="faq-item reveal">
@@ -1416,7 +1889,9 @@
         What happens when I hit 10 tasks on the Free plan?
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-answer">Existing tasks continue to work normally — developers can still accept, flag, and complete them. Only new task assignments are blocked until your count resets. The reset happens automatically every 30 days.</div>
+      <div class="faq-answer">Existing tasks continue to work normally — developers can still accept, flag, and complete
+        them. Only new task assignments are blocked until your count resets. The reset happens automatically every 30
+        days.</div>
     </div>
 
     <div class="faq-item reveal">
@@ -1424,7 +1899,9 @@
         Does Brevi work with GitHub Enterprise?
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-answer">Currently Brevi supports public and private repositories on github.com. GitHub Enterprise (self-hosted) is not yet supported but is planned. Email us at hello@getbrevi.io if this is a requirement for your team.</div>
+      <div class="faq-answer">Currently Brevi supports public and private repositories on github.com. GitHub Enterprise
+        (self-hosted) is not yet supported but is planned. Email us at hello@getbrevi.io if this is a requirement for
+        your team.</div>
     </div>
 
     <div class="faq-item reveal">
@@ -1432,7 +1909,9 @@
         Can I try Pro before paying?
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-answer">The Free plan gives you 10 tasks per month to evaluate the full feature set including GitHub scanning and AI briefs. If you'd like a Pro trial, email hello@getbrevi.io and we'll set one up for your team.</div>
+      <div class="faq-answer">The Free plan gives you 10 tasks per month to evaluate the full feature set including
+        GitHub scanning and AI briefs. If you'd like a Pro trial, email hello@getbrevi.io and we'll set one up for your
+        team.</div>
     </div>
   </section>
 
@@ -1449,11 +1928,38 @@
     <p style="margin-top:12px;font-size:0.75rem;">
       <a href="mailto:hello@getbrevi.io" style="color:var(--muted);text-decoration:none;">hello@getbrevi.io</a>
       &nbsp;·&nbsp;
-      <a href="mailto:hello@getbrevi.io?subject=Privacy Policy" style="color:var(--muted);text-decoration:none;">Privacy Policy</a>
+      <a href="mailto:hello@getbrevi.io?subject=Privacy Policy" style="color:var(--muted);text-decoration:none;">Privacy
+        Policy</a>
       &nbsp;·&nbsp;
-      <a href="mailto:hello@getbrevi.io?subject=Terms of Service" style="color:var(--muted);text-decoration:none;">Terms of Service</a>
+      <a href="mailto:hello@getbrevi.io?subject=Terms of Service" style="color:var(--muted);text-decoration:none;">Terms
+        of Service</a>
     </p>
   </footer>
+
+  <!-- VIDEO MODAL -->
+  <div class="video-overlay" id="videoOverlay" role="dialog" aria-modal="true" aria-label="Product demo video">
+    <div class="video-backdrop" id="videoBackdrop"></div>
+    <div class="video-modal">
+      <div class="video-modal-topbar">
+        <span class="video-modal-title">Brevi — Product Demo</span>
+        <div class="video-modal-controls">
+          <button class="video-ctrl-btn close-btn" title="Close" onclick="closeDemoVideo()">✕</button>
+        </div>
+      </div>
+      <div class="video-wrapper">
+        <video id="demoVideo" src="brevi-demo.mp4" playsinline></video>
+      </div>
+      <div class="video-controls-bar">
+        <div class="video-progress-wrap" id="progressWrap">
+          <div class="video-progress-fill" id="progressFill"></div>
+        </div>
+        <div class="video-controls-row">
+          <button class="video-ctrl-btn" id="pauseBtn" title="Play / Pause" onclick="toggleVideoPause()">⏸</button>
+          <span class="video-time" id="videoTime">0:00 / 0:00</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script>
     const reveals = document.querySelectorAll('.reveal');
@@ -1473,7 +1979,73 @@
       document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
       if (!isOpen) item.classList.add('open');
     }
+
+    // ── Demo video modal ─────────────────────────────────────────────────
+    const videoOverlay = document.getElementById('videoOverlay');
+    const demoVideo = document.getElementById('demoVideo');
+    const pauseBtn = document.getElementById('pauseBtn');
+    const videoBackdrop = document.getElementById('videoBackdrop');
+    const progressFill = document.getElementById('progressFill');
+    const progressWrap = document.getElementById('progressWrap');
+    const videoTime = document.getElementById('videoTime');
+
+    function fmtTime(s) {
+      if (isNaN(s)) return '0:00';
+      const m = Math.floor(s / 60);
+      const sec = Math.floor(s % 60).toString().padStart(2, '0');
+      return `${m}:${sec}`;
+    }
+
+    demoVideo.addEventListener('timeupdate', () => {
+      const pct = demoVideo.duration ? (demoVideo.currentTime / demoVideo.duration) * 100 : 0;
+      progressFill.style.width = pct + '%';
+      videoTime.textContent = `${fmtTime(demoVideo.currentTime)} / ${fmtTime(demoVideo.duration)}`;
+    });
+
+    demoVideo.addEventListener('ended', () => {
+      pauseBtn.textContent = '▶';
+    });
+
+    progressWrap.addEventListener('click', (e) => {
+      if (!demoVideo.duration) return;
+      const rect = progressWrap.getBoundingClientRect();
+      const ratio = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+      demoVideo.currentTime = ratio * demoVideo.duration;
+    });
+
+    function openDemoVideo() {
+      videoOverlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      demoVideo.play();
+      pauseBtn.textContent = '⏸';
+    }
+
+    function closeDemoVideo() {
+      videoOverlay.classList.remove('open');
+      document.body.style.overflow = '';
+      demoVideo.pause();
+      demoVideo.currentTime = 0;
+      progressFill.style.width = '0%';
+      videoTime.textContent = '0:00 / 0:00';
+      pauseBtn.textContent = '▶';
+    }
+
+    function toggleVideoPause() {
+      if (demoVideo.paused) {
+        demoVideo.play();
+        pauseBtn.textContent = '⏸';
+      } else {
+        demoVideo.pause();
+        pauseBtn.textContent = '▶';
+      }
+    }
+
+    videoBackdrop.addEventListener('click', closeDemoVideo);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && videoOverlay.classList.contains('open')) closeDemoVideo();
+    });
   </script>
 
 </body>
+
 </html>
