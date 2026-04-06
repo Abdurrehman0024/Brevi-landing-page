@@ -345,6 +345,10 @@
       background: var(--red);
     }
 
+    .step:nth-child(5)::before {
+      background: var(--purple);
+    }
+
     .step-number {
       font-family: 'Syne', sans-serif;
       font-size: 3rem;
@@ -1466,7 +1470,8 @@
       <span class="h1-line2">Start shipping.</span>
     </h1>
     <p class="hero-sub">
-      Brevi turns Jira and Shortcut tickets into structured AI briefs, delivered to your developers in Slack. No back-and-forth, no
+      Brevi turns your platform tickets (Jira, Shortcut.) into structured AI briefs, delivered to your developers
+      in Slack. No back-and-forth, no
       vague handoffs, no context lost.
     </p>
     <div class="hero-actions">
@@ -1525,26 +1530,32 @@
     <div class="steps">
       <div class="step reveal">
         <span class="step-number">01</span>
+        <span class="step-icon">📝</span>
+        <h3>Create with /create-task</h3>
+        <p>Create Jira or Shortcut tickets directly from Slack without opening another tab. Fast and simple.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step-number">02</span>
         <span class="step-icon">⚡</span>
         <h3>Manager types /assign</h3>
         <p>Select a developer, paste the task URL or ticket ID, add an optional note and GitHub repo. That's it.</p>
       </div>
       <div class="step reveal">
-        <span class="step-number">02</span>
+        <span class="step-number">03</span>
         <span class="step-icon">🤖</span>
         <h3>AI reads the ticket</h3>
-        <p>Brevi fetches your Jira/shortuct ticket and generates two things - a plain summary for the manager and a structured
+        <p>Brevi fetches your task ticket and generates two things - a plain summary for the manager and a structured
           brief for the developer, plus a GitHub repo scan for relevant files.</p>
       </div>
       <div class="step reveal">
-        <span class="step-number">03</span>
+        <span class="step-number">04</span>
         <span class="step-icon">📩</span>
         <h3>Developer gets briefed</h3>
         <p>The dev receives a clean DM with a structured approach, relevant files, and Accept / Scope Unclear / Blocked
           buttons.</p>
       </div>
       <div class="step reveal">
-        <span class="step-number">04</span>
+        <span class="step-number">05</span>
         <span class="step-icon">✅</span>
         <h3>Done via /done</h3>
         <p>When finished, the dev types /done, submits PR links. Manager is notified instantly. Everything logged in the
@@ -1675,9 +1686,15 @@
     <h2 class="section-title reveal">Everything your team needs,<br />nothing it doesn't</h2>
     <div class="features-grid">
       <div class="feature reveal">
+        <div class="feature-icon" style="background:rgba(54,197,240,0.12);color:var(--blue)">📝</div>
+        <h3>Create Tickets from Slack</h3>
+        <p>Use /create-task to instantly create tickets in Jira or Shortcut without ever leaving your Slack workspace.
+        </p>
+      </div>
+      <div class="feature reveal">
         <div class="feature-icon" style="background:rgba(54,197,240,0.12);color:var(--blue)">🎯</div>
         <h3>AI-Generated Briefs & Summaries</h3>
-        <p>Brevi reads your Jira/Shortcut ticket and sends the manager a plain-English task summary, while the developer gets a
+        <p>Brevi reads your ticket and sends the manager a plain-English task summary, while the developer gets a
           structured brief with approach, focus areas, and potential risks.</p>
       </div>
       <div class="feature reveal">
@@ -1804,6 +1821,7 @@
         </div>
         <ul class="plan-features">
           <li><span class="check">✓</span><span>5 task assignments per month</span></li>
+          <li><span class="check">✓</span><span>/create-task for ticket creation</span></li>
           <li><span class="check">✓</span><span>AI-generated developer briefs</span></li>
           <li><span class="check">✓</span><span>1 authorized manager</span></li>
           <li><span class="check">✓</span><span>GitHub repo intelligence</span></li>
@@ -1824,6 +1842,7 @@
         </div>
         <ul class="plan-features">
           <li><span class="check">✓</span><span>Unlimited task assignments</span></li>
+          <li><span class="check">✓</span><span>/create-task for ticket creation</span></li>
           <li><span class="check">✓</span><span>AI-generated developer briefs</span></li>
           <li><span class="check">✓</span><span>Up to 4 authorized managers</span></li>
           <li><span class="check">✓</span><span>GitHub repo intelligence</span></li>
@@ -1858,6 +1877,24 @@
 
     <div class="faq-item reveal">
       <button class="faq-question" onclick="toggleFaq(this)">
+        Can I create new tickets directly from Slack?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Yes, you can use the `/create-task` command in Slack to instantly create a new Jira or
+        Shortcut ticket without switching tabs. It's fast and automatically prompts you for the required details.</div>
+    </div>
+
+    <div class="faq-item reveal">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Does Brevi support Shortcut?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">Absolutely. While we started with Jira, Brevi fully integrates with Shortcut. You can
+        create tickets, summarize existing ones, and assign them exactly the same way.</div>
+    </div>
+
+    <div class="faq-item reveal">
+      <button class="faq-question" onclick="toggleFaq(this)">
         What does "per workspace" mean?
         <span class="faq-icon">+</span>
       </button>
@@ -1870,7 +1907,8 @@
         Is my Jira API token stored securely?
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-answer">Yes. Your Jira, Shortuct and GitHub credentials are stored encrypted in our database and are never
+      <div class="faq-answer">Yes. Your Jira, Shortuct and GitHub credentials are stored encrypted in our database and
+        are never
         exposed in logs or responses. They are only used to fetch ticket content when a task is assigned.</div>
     </div>
 
