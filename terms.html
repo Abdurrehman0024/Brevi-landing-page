@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service - Brevi</title>
+  <link rel="icon" type="image/png" href="brevi.png" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --purple: #4A154B;
+      --blue: #36C5F0;
+      --green: #2EB67D;
+      --yellow: #ECB22E;
+      --red: #E01E5A;
+      --bg: #0e0010;
+      --surface: #1a001c;
+      --text: #f0e6f1;
+      --muted: #9b7f9d;
+      --border: rgba(74, 21, 75, 0.5);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 20px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      background: rgba(14, 0, 16, 0.85);
+      backdrop-filter: blur(16px);
+    }
+
+    .logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.5rem;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+    }
+
+    .logo-mark span {
+      border-radius: 3px;
+      display: block;
+    }
+
+    .logo-mark span:nth-child(1) {
+      background: var(--blue);
+    }
+
+    .logo-mark span:nth-child(2) {
+      background: var(--green);
+    }
+
+    .logo-mark span:nth-child(3) {
+      background: var(--yellow);
+    }
+
+    .logo-mark span:nth-child(4) {
+      background: var(--red);
+    }
+
+    .nav-cta {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 0.875rem;
+      padding: 10px 22px;
+      background: var(--green);
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: #25a066;
+      transform: translateY(-1px);
+    }
+
+    .page-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 140px 24px 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-header {
+      margin-bottom: 56px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .page-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .page-meta {
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(236, 178, 46, 0.08) 0%, rgba(74, 21, 75, 0.2) 100%);
+      border: 1px solid rgba(236, 178, 46, 0.3);
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin-bottom: 48px;
+    }
+
+    .highlight-box-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--yellow);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .highlight-box p {
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .policy-section {
+      margin-bottom: 48px;
+    }
+
+    .section-number {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-body p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+
+    .section-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-body strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .section-body ul {
+      list-style: none;
+      margin: 12px 0 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .section-body ul li {
+      font-size: 0.9rem;
+      color: var(--muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.6;
+    }
+
+    .section-body ul li::before {
+      content: '→';
+      color: var(--purple);
+      flex-shrink: 0;
+      margin-top: 2px;
+      font-weight: 700;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 48px 0;
+    }
+
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .contact-box h3 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .contact-box p {
+      font-size: 0.875rem;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .contact-box a {
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact-box a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      padding: 40px 24px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      position: relative;
+      z-index: 1;
+    }
+
+    footer p {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--text);
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        padding: 16px 20px;
+      }
+
+      .page-wrapper {
+        padding: 120px 20px 60px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">
+      <div class="logo-mark">
+        <span></span><span></span>
+        <span></span><span></span>
+      </div>
+      Brevi
+    </div>
+    <a href="https://brevi.onrender.com/slack/install" class="nav-cta">Get Started Free</a>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <div class="page-header">
+      <span class="page-label">Legal</span>
+      <h1 class="page-title">Terms of Service</h1>
+      <p class="page-meta">Last updated: April 2026 &nbsp;·&nbsp; Effective upon installation of Brevi</p>
+    </div>
+
+    <div class="highlight-box">
+      <div class="highlight-box-title">📋 Plain English Summary</div>
+      <p>By installing and using Brevi, you agree to these terms. Brevi is a Slack bot that integrates with Jira,
+        Shortcut, and GitHub to generate AI-powered task briefs for your development team. You own your data. We provide
+        the service as-is. Be respectful, don't abuse the platform, and pay for Pro if you use it beyond the free
+        limits.</p>
+    </div>
+
+    <!-- 1. ACCEPTANCE -->
+    <div class="policy-section">
+      <!-- <span class="section-number">Section 01</span> -->
+      <h2 class="section-title">Acceptance of Terms</h2>
+      <div class="section-body">
+        <p>By installing, accessing, or using Brevi (the "Service"), you agree to be bound by these Terms of Service
+          ("Terms"). If you are installing Brevi on behalf of an organization, you represent that you have the authority
+          to bind that organization to these Terms.</p>
+        <p>If you do not agree to these Terms, do not install or use the Service. We reserve the right to update these
+          Terms at any time. Continued use of the Service after changes constitutes acceptance of the updated Terms.</p>
+      </div>
+    </div>
+
+    <!-- 2. DESCRIPTION -->
+    <div class="policy-section">
+      <!-- <span class="section-number">Section 02</span> -->
+      <h2 class="section-title">Description of Service</h2>
+      <div class="section-body">
+        <p>Brevi is an AI-powered task brief engine for software development teams that operates as a Slack application.
+          The Service includes:</p>
+        <ul>
+          <li>Fetching task content from Jira Cloud and Shortcut via your provided API credentials</li>
+          <li>Scanning GitHub repository file structures to identify relevant files for a given task</li>
+          <li>Generating AI-powered structured briefs and summaries using third-party AI providers</li>
+          <li>Delivering task briefs to developers via Slack direct messages</li>
+          <li>Creating tickets in Jira or Shortcut directly from Slack via the /create-task command</li>
+          <li>Providing team management commands including /assign, /done, /my-tasks, /brevi-status, and /setup</li>
+        </ul>
+        <p>The Service is provided on a subscription basis. A free tier is available with limited monthly task
+          assignments. Paid plans unlock additional features and higher usage limits.</p>
+      </div>
+    </div>
+
+    <!-- 3. ACCOUNTS AND ACCESS -->
+    <div class="policy-section">
+      <!-- <span class="section-number">Section 03</span> -->
+      <h2 class="section-title">Accounts and Access</h2>
+      <div class="section-body">
+        <p>Brevi operates at the Slack workspace level. The person who installs Brevi via the Slack OAuth flow is the
+          workspace administrator for Brevi purposes. You are responsible for:</p>
+        <ul>
+          <li>Ensuring all credentials provided to Brevi (Jira API tokens, GitHub personal access tokens) are valid and
+            have appropriate permissions</li>
+          <li>Designating authorized managers who can use the /assign and /create-task commands via /setup</li>
+          <li>All activity that occurs within your workspace's Brevi installation</li>
+          <li>Keeping your API credentials secure and rotating them promptly if compromised</li>
+        </ul>
+        <p>You must notify us immediately at <strong>brevi.support@gmail.com</strong> if you become aware of any unauthorized
+          use of your workspace's Brevi installation or any security breach involving your credentials.</p>
+      </div>
+    </div>
+
+    <!-- 4. ACCEPTABLE USE -->
+    <div class="policy-section">
+      <!-- <span class="section-number">Section 04</span> -->
+      <h2 class="section-title">Acceptable Use</h2>
+      <div class="section-body">
+        <p>You agree to use the Service only for lawful purposes and in accordance with these Terms. You agree not to:
+        </p>
+        <ul>
+          <li>Use the Service to process any data you do not have the legal right to use or share</li>
+          <li>Attempt to reverse-engineer, decompile, or extract the source code of the Service</li>
+          <li>Use automated scripts or bots to interact with the Service beyond normal usage</li>
+          <li>Attempt to gain unauthorized access to any part of the Service or its infrastructure</li>
+          <li>Use the Service in a way that could damage, disable, or impair the Service or interfere with other users
+          </li>
+          <li>Resell, sublicense, or otherwise commercialize access to the Service without written permission</li>
+          <li>Use the Service to transmit any harmful, offensive, or illegal content</li>
+          <li>Circumvent any usage limits or restrictions imposed by your subscription plan</li>
+        </ul>
+        <p>We reserve the right to suspend or terminate access to the Service for any workspace that violates these
+          terms without prior notice.</p>
+      </div>
+    </div>
+
+    <!-- 5. SUBSCRIPTION AND PAYMENT -->
+    <div class="policy-section">
+      <!-- <span class="section-number">Section 05</span> -->
+      <h2 class="section-title">Subscription and Payment</h2>
+      <div class="section-body">
+        <p><strong>Free Plan:</strong> Brevi offers a free plan that includes a limited number of task assignments per
+          month. Free plan usage limits are subject to change with reasonable notice.</p>
+        <p><strong>Pro Plan:</strong> Paid subscriptions are available on a monthly or annual basis. Current pricing is
+          listed at usebrevi.co and is subject to change with 30 days notice to existing subscribers.</p>
+        <p><strong>Billing:</strong> All payments are processed by Lemon Squeezy, our payment processor. By subscribing
+          to a paid plan, you authorize recurring charges to your payment method. Annual plans are billed once per year.
+        </p>
+        <p><strong>Cancellation:</strong> You may cancel your subscription at any time. Cancellation takes effect at the
+          end of the current billing period. No partial refunds are provided for unused time within a billing period.
+        </p>
+        <p><strong>Refunds:</strong> All sales are final unless otherwise required by applicable law. If you experience
+          a technical issue that prevents you from using the Service, contact us at brevi.support@gmail.com and we will work
+          to resolve it.</p>
+        <p><strong>Taxes:</strong> Prices may be subject to applicable taxes depending on your location. Lemon Squeezy,
+          as our Merchant of Record, handles tax compliance on all transactions.</p>
+      </div>
+    </div>
+
+    <!-- 6. YOUR DATA -->
+    <div class="policy-section">
+      <!-- <span class="section-number">Section 06</span> -->
+      <h2 class="section-title">Your Data and Intellectual Property</h2>
+      <div class="section-body">
+        <p>You retain full ownership of all data you provide to or generate through the Service, including Jira ticket
+          content, GitHub repository information, task descriptions, and AI-generated briefs created from your data.</p>
+        <p>By using the Service, you grant Brevi a limited, non-exclusive license to access, process, and transmit your
+          data solely for the purpose of providing the Service to you. This license does not extend to using your data
+          for any other purpose, including training AI models.</p>
+        <p>We do not claim any intellectual property rights over your data. Your tickets, code references, and task
+          content remain yours.</p>
+      </div>
+    </div>
+
+    <!-- 7. THIRD PARTY SERVICES -->
+    <div class="policy-section">
+      <!-- <span class="section-number">Section 07</span> -->
+      <h2 class="section-title">Third-Party Services and Integrations</h2>
+      <div class="section-body">
+        <p>The Service integrates with third-party platforms including Slack, Jira, Shortcut, GitHub, and OpenRouter AI.
+          Your use of these third-party services is governed by their respective terms of service and privacy policies.
+          We are not responsible for the availability, accuracy, or practices of any third-party service.</p>
+        <p>By connecting your Jira, Shortcut, or GitHub credentials to Brevi, you confirm that you have the authority to
+          grant Brevi access to those accounts and that doing so does not violate any agreement you have with those
+          third-party providers.</p>
+      </div>
+    </div>
+
+    <!-- 8. AI GENERATED CONTENT -->
+    <div class="policy-section">
+      <!-- <span class="section-number">Section 08</span> -->
+      <h2 class="section-title">AI-Generated Content</h2>
+      <div class="section-body">
+        <p>Brevi uses AI to generate task summaries, developer briefs, and recommendations. You acknowledge that:</p>
+        <ul>
+          <li>AI-generated content may contain errors, inaccuracies, or omissions and should be reviewed before acting
+            on it</li>
+          <li>AI-generated briefs are suggestions to assist your team, not authoritative technical specifications</li>
+          <li>We do not warrant the accuracy, completeness, or fitness of any AI-generated content for any particular
+            purpose</li>
+          <li>You are responsible for reviewing AI-generated content before it is acted upon by your development team
+          </li>
+        </ul>
+        <p>Your ticket content is sent to our AI provider to generate briefs. This content is processed in
+          accordance with our Privacy Policy and is not used to train AI models.</p>
+      </div>
+    </div>
+
+    <!-- 9. DISCLAIMER OF WARRANTIES -->
+    <div class="policy-section">
+      <!-- <span class="section-number">Section 09</span> -->
+      <h2 class="section-title">Disclaimer of Warranties</h2>
+      <div class="section-body">
+        <p>THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED. TO THE
+          MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, BREVI DISCLAIMS ALL WARRANTIES INCLUDING BUT NOT LIMITED TO:</p>
+        <ul>
+          <li>Implied warranties of merchantability, fitness for a particular purpose, and non-infringement</li>
+          <li>That the Service will be uninterrupted, error-free, or completely secure</li>
+          <li>That defects will be corrected or that the Service is free of viruses or other harmful components</li>
+          <li>The accuracy, reliability, or completeness of any content generated by the Service</li>
+        </ul>
+        <p>Some jurisdictions do not allow the exclusion of certain warranties, so some of the above exclusions may not
+          apply to you.</p>
+      </div>
+    </div>
+
+    <!-- 10. LIMITATION OF LIABILITY -->
+    <div class="policy-section">
+      <!-- <span class="section-number">Section 10</span> -->
+      <h2 class="section-title">Limitation of Liability</h2>
+      <div class="section-body">
+        <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, BREVI SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL,
+          SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO:</p>
+        <ul>
+          <li>Loss of profits, revenue, data, or business opportunities</li>
+          <li>Damages resulting from unauthorized access to or alteration of your data</li>
+          <li>Damages resulting from your reliance on AI-generated content</li>
+          <li>Damages resulting from third-party service outages or failures</li>
+        </ul>
+        <p>Some jurisdictions do not allow the limitation of liability for certain types of damages, so some of the
+          above limitations may not apply to you.</p>
+      </div>
+    </div>
+
+    <!-- 11. TERMINATION -->
+    <div class="policy-section">
+      <!-- <span class="section-number">Section 11</span> -->
+      <h2 class="section-title">Termination</h2>
+      <div class="section-body">
+        <p><strong>By you:</strong> You may terminate your use of the Service at any time by uninstalling Brevi from
+          your Slack workspace and cancelling any active subscription. To request deletion of all stored data, email
+          brevi.support@gmail.com.</p>
+        <p><strong>By us:</strong> We reserve the right to suspend or terminate your access to the Service immediately
+          and without notice if you violate these Terms, engage in fraudulent activity, or if we determine that
+          continued access poses a risk to the Service or other users.</p>
+        <p><strong>Effect of termination:</strong> Upon termination, your right to use the Service ceases immediately.
+          Sections of these Terms that by their nature should survive termination will survive, including ownership
+          provisions, warranty disclaimers, and limitations of liability.</p>
+      </div>
+    </div>
+
+    <!-- 12. CHANGES TO SERVICE -->
+    <div class="policy-section">
+      <!-- <span class="section-number">Section 12</span> -->
+      <h2 class="section-title">Changes to the Service</h2>
+      <div class="section-body">
+        <p>We reserve the right to modify, suspend, or discontinue any part of the Service at any time. We will provide
+          reasonable notice of significant changes where possible. We are not liable to you or any third party for any
+          modification, suspension, or discontinuation of the Service.</p>
+        <p>We may add, remove, or modify features of the Service at any time. Significant changes to paid plan features
+          will be communicated with at least 14 days notice to active subscribers.</p>
+      </div>
+    </div>
+
+    <!-- 13. GOVERNING LAW -->
+    <div class="policy-section">
+      <!-- <span class="section-number">Section 13</span> -->
+      <h2 class="section-title">Governing Law and Disputes</h2>
+      <div class="section-body">
+        <p>These Terms are governed by and construed in accordance with applicable law. Any disputes arising from these
+          Terms or your use of the Service shall first be attempted to be resolved through good-faith negotiation by
+          contacting us at brevi.support@gmail.com.</p>
+        <p>If a dispute cannot be resolved through negotiation within 30 days, both parties agree to submit to binding
+          arbitration before pursuing any legal action, except where prohibited by applicable law.</p>
+      </div>
+    </div>
+
+    <!-- 14. GENERAL -->
+    <div class="policy-section">
+      <!-- <span class="section-number">Section 14</span> -->
+      <h2 class="section-title">General Provisions</h2>
+      <div class="section-body">
+        <p><strong>Entire Agreement:</strong> These Terms, together with our Privacy Policy, constitute the entire
+          agreement between you and Brevi regarding the Service and supersede all prior agreements.</p>
+        <p><strong>Severability:</strong> If any provision of these Terms is found to be unenforceable, that provision
+          will be modified to the minimum extent necessary to make it enforceable, and the remaining provisions will
+          remain in full effect.</p>
+        <p><strong>No Waiver:</strong> Our failure to enforce any right or provision of these Terms will not be
+          considered a waiver of those rights.</p>
+        <p><strong>Assignment:</strong> You may not assign or transfer these Terms or your rights under them without our
+          prior written consent. We may assign our rights and obligations under these Terms without restriction.</p>
+        <p><strong>Contact:</strong> For any questions about these Terms, contact us at
+          <strong>brevi.support@gmail.com</strong>.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="contact-box">
+      <h3>Questions about these terms?</h3>
+      <p>We're a small team and we read every email. If anything here is unclear or you have concerns, reach out
+        directly.</p>
+      <a href="mailto:brevi.support@gmail.com">brevi.support@gmail.com</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2026 Brevi · <a href="index.html">Home</a> · <a href="privacy.html">Privacy Policy</a> · <a
+        href="terms.html">Terms of Service</a> · <a href="mailto:brevi.support@gmail.com">brevi.support@gmail.com</a></p>
+  </footer>
+
+</body>
+
+</html>

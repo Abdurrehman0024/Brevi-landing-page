@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy - Brevi</title>
+  <link rel="icon" type="image/png" href="brevi.png" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --purple: #4A154B;
+      --blue: #36C5F0;
+      --green: #2EB67D;
+      --yellow: #ECB22E;
+      --red: #E01E5A;
+      --bg: #0e0010;
+      --surface: #1a001c;
+      --text: #f0e6f1;
+      --muted: #9b7f9d;
+      --border: rgba(74, 21, 75, 0.5);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 20px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      background: rgba(14, 0, 16, 0.85);
+      backdrop-filter: blur(16px);
+    }
+
+    .logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.5rem;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+    }
+
+    .logo-mark span {
+      border-radius: 3px;
+      display: block;
+    }
+
+    .logo-mark span:nth-child(1) {
+      background: var(--blue);
+    }
+
+    .logo-mark span:nth-child(2) {
+      background: var(--green);
+    }
+
+    .logo-mark span:nth-child(3) {
+      background: var(--yellow);
+    }
+
+    .logo-mark span:nth-child(4) {
+      background: var(--red);
+    }
+
+    .nav-cta {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 0.875rem;
+      padding: 10px 22px;
+      background: var(--green);
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: #25a066;
+      transform: translateY(-1px);
+    }
+
+    /* ── LAYOUT ── */
+    .page-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 140px 24px 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── HEADER ── */
+    .page-header {
+      margin-bottom: 56px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .page-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .page-meta {
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(46, 182, 125, 0.08) 0%, rgba(74, 21, 75, 0.2) 100%);
+      border: 1px solid rgba(46, 182, 125, 0.3);
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin-bottom: 48px;
+    }
+
+    .highlight-box-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--green);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .highlight-box p {
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── SECTIONS ── */
+    .policy-section {
+      margin-bottom: 48px;
+    }
+
+    .section-number {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-body p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+
+    .section-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-body strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .section-body ul {
+      list-style: none;
+      margin: 12px 0 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .section-body ul li {
+      font-size: 0.9rem;
+      color: var(--muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.6;
+    }
+
+    .section-body ul li::before {
+      content: '→';
+      color: var(--purple);
+      flex-shrink: 0;
+      margin-top: 2px;
+      font-weight: 700;
+    }
+
+    /* ── DATA TABLE ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 14px;
+      font-size: 0.85rem;
+    }
+
+    .data-table th {
+      text-align: left;
+      padding: 10px 14px;
+      background: rgba(74, 21, 75, 0.3);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+    }
+
+    .data-table th:first-child {
+      border-radius: 8px 0 0 0;
+    }
+
+    .data-table th:last-child {
+      border-radius: 0 8px 0 0;
+    }
+
+    .data-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+      vertical-align: top;
+    }
+
+    .data-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .data-table tr:nth-child(even) td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .data-table td strong {
+      color: var(--text);
+    }
+
+    /* ── BADGE ── */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-size: 0.72rem;
+      font-weight: 600;
+    }
+
+    .badge-green {
+      background: rgba(46, 182, 125, 0.15);
+      color: var(--green);
+      border: 1px solid rgba(46, 182, 125, 0.3);
+    }
+
+    .badge-red {
+      background: rgba(224, 30, 90, 0.12);
+      color: var(--red);
+      border: 1px solid rgba(224, 30, 90, 0.25);
+    }
+
+    /* ── CONTACT BOX ── */
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .contact-box h3 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .contact-box p {
+      font-size: 0.875rem;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .contact-box a {
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact-box a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 48px 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 40px 24px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      position: relative;
+      z-index: 1;
+    }
+
+    footer p {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--text);
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        padding: 16px 20px;
+      }
+
+      .page-wrapper {
+        padding: 120px 20px 60px;
+      }
+
+      .data-table {
+        font-size: 0.78rem;
+      }
+
+      .data-table th,
+      .data-table td {
+        padding: 8px 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">
+      <div class="logo-mark">
+        <span></span><span></span>
+        <span></span><span></span>
+      </div>
+      Brevi
+    </div>
+    <a href="https://brevi.onrender.com/slack/install" class="nav-cta">Get Started Free</a>
+  </nav>
+
+  <!-- CONTENT -->
+  <div class="page-wrapper">
+
+    <!-- HEADER -->
+    <div class="page-header">
+      <span class="page-label">Legal</span>
+      <h1 class="page-title">Privacy Policy</h1>
+      <p class="page-meta">Last updated: March 2026 &nbsp;·&nbsp; Effective immediately upon install</p>
+    </div>
+
+    <!-- TOP COMMITMENT BOX -->
+    <div class="highlight-box">
+      <div class="highlight-box-title">🔒 Our core commitment</div>
+      <p>Brevi does not train AI models on your data. Your Jira tickets, GitHub code, task descriptions, and Slack
+        messages are never used to train or fine-tune any language model by us or any third party we work with. Your
+        data is used solely to generate briefs for your team and nothing else.</p>
+    </div>
+
+    <!-- 1. WHO WE ARE -->
+    <div class="policy-section">
+      <!-- <span class="section-number">Section 01</span> -->
+      <h2 class="section-title">Who We Are</h2>
+      <div class="section-body">
+        <p>Brevi is an AI-powered task brief engine for software development teams that operates as a Slack application.
+          Brevi is operated as an independent software product. If you have questions about this policy, contact us at
+          <strong>brevi.support@gmail.com</strong>.</p>
+        <p>This Privacy Policy applies to all users of the Brevi Slack application and the usebrevi.co website. By
+          installing Brevi, you agree to the practices described in this policy.</p>
+      </div>
+    </div>
+
+    <!-- 2. WHAT WE COLLECT -->
+    <div class="policy-section">
+      <!-- <span class="section-number">Section 02</span> -->
+      <h2 class="section-title">What Data We Collect and Why</h2>
+      <div class="section-body">
+        <p>We collect only what is necessary to provide the service. Here is a complete breakdown:</p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Why we collect it</th>
+              <th>Stored?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Slack workspace ID and name</strong></td>
+              <td>To identify your workspace and route bot traffic correctly</td>
+              <td><span class="badge badge-green">✓ Yes</span></td>
+            </tr>
+            <tr>
+              <td><strong>Slack bot token</strong></td>
+              <td>To send messages and respond to commands in your workspace</td>
+              <td><span class="badge badge-green">✓ Yes</span></td>
+            </tr>
+            <tr>
+              <td><strong>Slack user IDs</strong></td>
+              <td>To identify managers and developers during task assignment</td>
+              <td><span class="badge badge-green">✓ Yes</span></td>
+            </tr>
+            <tr>
+              <td><strong>Jira credentials (URL, email, API token)</strong></td>
+              <td>To fetch ticket content when a task is assigned</td>
+              <td><span class="badge badge-green">✓ Yes, encrypted</span></td>
+            </tr>
+            <tr>
+              <td><strong>GitHub personal access token</strong></td>
+              <td>To scan repository file structure for relevant files</td>
+              <td><span class="badge badge-green">✓ Yes, encrypted</span></td>
+            </tr>
+            <tr>
+              <td><strong>Jira ticket content (title, description)</strong></td>
+              <td>Sent to AI to generate a developer brief, not stored long-term</td>
+              <td><span class="badge badge-green">✓ Temporarily</span></td>
+            </tr>
+            <tr>
+              <td><strong>GitHub file tree (filenames and paths only)</strong></td>
+              <td>To identify relevant files file contents are never read</td>
+              <td><span class="badge badge-red">✗ Not stored</span></td>
+            </tr>
+            <tr>
+              <td><strong>AI-generated task summaries</strong></td>
+              <td>Stored to power /my-tasks, /brevi-status, and weekly digests</td>
+              <td><span class="badge badge-green">✓ Yes</span></td>
+            </tr>
+            <tr>
+              <td><strong>Task status and activity logs</strong></td>
+              <td>To track task progress and generate manager reports</td>
+              <td><span class="badge badge-green">✓ Yes</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 3. WHAT WE DO NOT DO -->
+    <div class="policy-section">
+      <!-- <span class="section-number">Section 03</span> -->
+      <h2 class="section-title">What We Never Do</h2>
+      <div class="section-body">
+        <p>We want to be explicit about what we do not do with your data:</p>
+        <ul>
+          <li><strong>We do not train AI models on your data.</strong> Your Jira tickets, GitHub file trees, task
+            descriptions, and generated briefs are never used to train, fine-tune, or improve any AI model including
+            the models provided by our AI provider (OpenRouter).</li>
+          <li><strong>We do not read your source code.</strong> Brevi only accesses the file tree of your GitHub
+            repository (names and paths of files). It never downloads, reads, or stores the content of any code file.
+          </li>
+          <li><strong>We do not sell your data.</strong> We do not sell, rent, or share your data with any third party
+            for commercial purposes. Ever.</li>
+          <li><strong>We do not store Slack message history.</strong> Brevi only processes messages that directly
+            interact with it via slash commands or button clicks. We do not read or store general Slack conversation
+            history.</li>
+          <li><strong>We do not access your full Jira project.</strong> We only fetch the specific ticket provided in
+            the /assign command. We do not browse, index, or store your Jira project history.</li>
+          <li><strong>We do not share data between workspaces.</strong> Each Slack workspace's data is completely
+            isolated. One team's tickets, credentials, and task history are never accessible to another team.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 4. HOW WE USE AI -->
+    <div class="policy-section">
+      <!-- <span class="section-number">Section 04</span> -->
+      <h2 class="section-title">How We Use AI and What Happens to Your Data</h2>
+      <div class="section-body">
+        <p>When a manager runs <strong>/assign</strong>, the following happens:</p>
+        <ul>
+          <li>The Jira ticket content (title and description) is sent to our AI provider to generate a
+            structured developer brief.</li>
+          <li>The AI processes this content and returns a brief. This exchange is not stored by the AI provider for
+            training purposes under our agreement.</li>
+          <li>The generated brief is stored in our database and is only accessible to members of your Slack workspace
+            via Brevi commands.</li>
+          <li>The raw Jira ticket content is stored in our database as reference material to power features like
+            /my-tasks and /brevi-status.</li>
+        </ul>
+        <p>Our AI provider routes requests to underlying language models. We use configurations that opt
+          out of training data usage where available. The specific model used may vary, but no provider we work with is
+          permitted to use your content for model training under our terms of use with them.</p>
+      </div>
+    </div>
+
+    <!-- 5. DATA STORAGE AND SECURITY -->
+    <div class="policy-section">
+      <!-- <span class="section-number">Section 05</span> -->
+      <h2 class="section-title">Data Storage and Security</h2>
+      <div class="section-body">
+        <p>All data is stored in a hosted PostgreSQL database (Supabase) with the following protections:</p>
+        <ul>
+          <li><strong>Row Level Security (RLS)</strong> is enabled on all tables. Public API access is blocked entirely
+            — data is only accessible through authenticated backend requests.</li>
+          <li><strong>Credentials are encrypted at rest.</strong> Your Jira API token and GitHub personal access token
+            are stored encrypted and are never exposed in logs, responses, or API outputs.</li>
+          <li><strong>Access is workspace-scoped.</strong> Every database record is tied to a specific Slack workspace
+            ID. Cross-workspace data access is architecturally impossible.</li>
+          <li><strong>The admin panel is JWT-protected.</strong> Only authorized Brevi operators can access workspace
+            management tools, and access requires authenticated credentials.</li>
+          <li><strong>HTTPS everywhere.</strong> All data in transit between Slack, Brevi, and external APIs is
+            encrypted via TLS.</li>
+        </ul>
+        <p>While we implement industry-standard security practices, no system is completely immune to risk. If you
+          become aware of a security issue, please contact us immediately at <strong>brevi.support@gmail.com</strong>.</p>
+      </div>
+    </div>
+
+    <!-- 6. DATA RETENTION -->
+    <div class="policy-section">
+      <!-- <span class="section-number">Section 06</span> -->
+      <h2 class="section-title">Data Retention</h2>
+      <div class="section-body">
+        <p>We retain your data for as long as your Slack workspace has Brevi installed. Specifically:</p>
+        <ul>
+          <li><strong>Workspace credentials</strong> are retained for the duration of the installation and deleted upon
+            uninstall request.</li>
+          <li><strong>Task records and activity logs</strong> are retained for the duration of the installation to power
+            historical views and digests.</li>
+          <li><strong>Generated AI briefs</strong> are retained for the duration of the installation to power /my-tasks
+            and /brevi-status commands.</li>
+        </ul>
+        <p>To request deletion of all your workspace's data, email us at <strong>brevi.support@gmail.com</strong> with your
+          Slack workspace name. We will permanently delete all associated records within 7 business days.</p>
+      </div>
+    </div>
+
+    <!-- 7. THIRD PARTY SERVICES -->
+    <div class="policy-section">
+      <!-- <span class="section-number">Section 07</span> -->
+      <h2 class="section-title">Third-Party Services We Use</h2>
+      <div class="section-body">
+        <p>Brevi integrates with the following third-party services to function. Each has its own privacy policy:</p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Purpose</th>
+              <th>Data sent to them</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Slack</strong></td>
+              <td>Bot platform and communication</td>
+              <td>Bot tokens, message content, user IDs</td>
+            </tr>
+            <tr>
+              <td><strong>Atlassian (Jira)</strong></td>
+              <td>Ticket fetching via your credentials</td>
+              <td>Your API token (used to authenticate requests to your own Jira)</td>
+            </tr>
+            <tr>
+              <td><strong>GitHub</strong></td>
+              <td>Repository file tree scanning</td>
+              <td>Your personal access token (used to authenticate read requests to your own repos)</td>
+            </tr>
+            <tr>
+              <td><strong>OpenRouter</strong></td>
+              <td>AI brief generation</td>
+              <td>Jira ticket title and description for brief generation</td>
+            </tr>
+            <tr>
+              <td><strong>Supabase</strong></td>
+              <td>Database hosting</td>
+              <td>All stored workspace and task data</td>
+            </tr>
+            <tr>
+              <td><strong>Lemon Squeezy</strong></td>
+              <td>Payment processing</td>
+              <td>Payment details and workspace ID for subscription linking</td>
+            </tr>
+            <tr>
+              <td><strong>Render</strong></td>
+              <td>Backend hosting</td>
+              <td>All server-side processing occurs here</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 8. YOUR RIGHTS -->
+    <div class="policy-section">
+      <!-- <span class="section-number">Section 08</span> -->
+      <h2 class="section-title">Your Rights</h2>
+      <div class="section-body">
+        <p>You have the following rights with respect to your data:</p>
+        <ul>
+          <li><strong>Right to access.</strong> You can request a copy of all data we hold for your workspace.</li>
+          <li><strong>Right to deletion.</strong> You can request permanent deletion of all workspace data at any time
+            by emailing brevi.support@gmail.com.</li>
+          <li><strong>Right to correction.</strong> If any stored data about your workspace is incorrect, contact us and
+            we will correct it.</li>
+          <li><strong>Right to uninstall.</strong> Removing Brevi from your Slack workspace immediately revokes our
+            access to your workspace. To delete stored records as well, contact us separately.</li>
+          <li><strong>Right to know.</strong> You have the right to know exactly what data we hold about your workspace.
+            Email us and we will respond within 7 business days.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 10. CHANGES -->
+    <div class="policy-section">
+      <!-- <span class="section-number">Section 10</span> -->
+      <h2 class="section-title">Changes to This Policy</h2>
+      <div class="section-body">
+        <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last updated" date at
+          the top of this page. For material changes, we will notify workspace admins via a Slack DM from the Brevi bot.
+        </p>
+        <p>Continued use of Brevi after changes are posted constitutes acceptance of the updated policy.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- CONTACT BOX -->
+    <div class="contact-box">
+      <h3>Questions about your privacy?</h3>
+      <p>We're a small team and we respond to every email. If you have any questions, concerns, or requests related to
+        this Privacy Policy, reach out directly.</p>
+      <a href="mailto:hello@usebrevi.co">brevi.support@gmail.com</a>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Brevi · <a href="index.html">Home</a> · <a href="terms.html">Terms Of Service</a> · <a
+        href="mailto:brevi.support@gmail.com">brevi.support@gmail.com</a></p>
+  </footer>
+
+</body>
+
+</html>
